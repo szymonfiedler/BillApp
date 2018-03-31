@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sara.billards.HoursActivity">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+    <TableLayout
+        android:layout_width="358dp"
+        android:layout_height="484dp"
+        android:layout_marginLeft="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481"
+        android:layout_marginStart="13dp">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour1"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="11.00-12.00"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/bHour1"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Button1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour2"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="12.00-13.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour3"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="13.00-14.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour4"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="14.00-15.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour5"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="15.00-16.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour6"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="16.00-17.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour7"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="17.00-18.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour8"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="18.00-19.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour9"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="19.00-20.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour10"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="20.00-21.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour11"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="21.00-22.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+            <TextView
+                android:id="@+id/tvHour12"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:text="22.00-23.00"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/bHour12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </TableRow>
+    </TableLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
