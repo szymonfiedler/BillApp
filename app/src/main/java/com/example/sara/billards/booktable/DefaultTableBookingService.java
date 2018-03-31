@@ -41,14 +41,12 @@ public class DefaultTableBookingService implements TableBookingService {
                           final BookedTableResponseHandler bookedTableResponseHandler,
                           Response.ErrorListener errorListener) {
         JSONObject requestAsJson = toJson(bookTableRequest);
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, targetUrl, requestAsJson, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, targetUrl, requestAsJson, response -> {
                 Log.i(TAG, "Received booked table event: " + response);
                 TableBookedResponse bookedResponse = toTableBookedResponse(response);
                 Log.i(TAG, "Trasformed to TableBookedResponse: " + bookedResponse);
                 bookedTableResponseHandler.handle(bookedResponse);
-            }
         }, errorListener);
 
         Log.i(TAG, "Sending POST request with payload" + requestAsJson);

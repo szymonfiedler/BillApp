@@ -1,5 +1,7 @@
 package com.example.sara.billards.booktable;
 
+import static java.util.Objects.*;
+
 public final class BookTableRequest {
     private final int tableId;
     private final int userId;
@@ -99,24 +101,12 @@ public final class BookTableRequest {
         }
 
         public BookTableRequest build() {
-            if (tableId == null) {
-                throw new RuntimeException("tableId cannot be null");
-            }
-            if (userId == null) {
-                throw new RuntimeException("userId cannot be null");
-            }
-            if (price == null) {
-                throw new RuntimeException("price cannot be null");
-            }
-            if (startHour == null) {
-                throw new RuntimeException("startHour cannot be null");
-            }
-            if (endHour == null) {
-                throw new RuntimeException("endHour cannot be null");
-            }
-            if (date == null) {
-                throw new RuntimeException("date cannot be null");
-            }
+            requireNonNull(tableId, "tableId cannot be null");
+            requireNonNull(userId, "userId cannot be null");
+            requireNonNull(price, "price cannot be null");
+            requireNonNull(startHour, "startHour cannot be null");
+            requireNonNull(date, "date cannot be null");
+
             return new BookTableRequest(
                     tableId,
                     userId,
