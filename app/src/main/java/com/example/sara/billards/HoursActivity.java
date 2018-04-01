@@ -70,19 +70,29 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
         allButtons.add(bHour11);
         allButtons.add(bHour12);
 
+
+
+
+        //Log.e(TAG, "tableId from Registration class " + tableId);
         bHour1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                takeHour();
             }
         });
-        Intent intent =getIntent(); // code to get data from previous activity
-        String date= intent.getStringExtra("DATE"); // storing the data in variable e1
+        Intent intent =getIntent(); //pobranie intentu CalenderActivity
+        String date= intent.getStringExtra("DATE"); // pobranie danych z CalendAractivity
 
+        Intent intent2 =getIntent(); //pobranie intentu RegistrationAct
+        int tableId= intent2.getIntExtra("tableId",1);
+
+
+        Log.e(TAG, "tableId  " + tableId);
         Log.e(TAG, "date from HoursActivity class " + date);
-        DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie
+
+        DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
                 date,
-                1, //TODO put table id here
+                tableId, //TODO put table id here (pobierz idTable z poczatkowej activity.wyslij PUT dopiero w endActivity na samym koncu)
                 bookedTables -> {
                     Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables);
                     List<BookedTable> bookedTablesSortedByStartHour = new ArrayList<>(bookedTables);
@@ -101,7 +111,7 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
                         currentHour = startHour;
                         for (int i = startHour; i < endHour; i++) {
                             int indexOfButtonToBeDisabled = currentHour - 11;
-                            allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);
+                            allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);//wygasniecie przycisku buttonu jesli godzina jest zarezerowwana w bazie danych
                             currentHour++;
                         }
                     }

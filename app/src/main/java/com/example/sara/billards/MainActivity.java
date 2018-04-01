@@ -15,6 +15,8 @@ import com.android.volley.RequestQueue;
 
 import org.json.JSONArray;
 
+import java.util.Random;
+
 
 public class MainActivity extends Activity {
     private static final String TAG = "MyActivity";
@@ -24,8 +26,7 @@ public class MainActivity extends Activity {
     TextView t1,t2,t3,t4,t5,t6,t7;
     TextView[] t= {t1,t2,t3,t4,t5,t6,t7};
     int i;
-
-
+   public static int tab1Id=1,tab2Id=2,tab3Id=3,tab4Id=4,tab5Id=5,tab6Id=6,tab7Id=7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,8 @@ t1.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         context = getApplicationContext();
         Intent intent = new Intent(context, Registration.class);
+
+        intent.putExtra("tableId", tab1Id);
         startActivity(intent);
     }
 });
@@ -57,6 +60,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab2Id);
                 startActivity(intent);
             }
         });
@@ -65,6 +69,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab3Id);
                 startActivity(intent);
             }
         });
@@ -73,6 +78,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab4Id);
                 startActivity(intent);
             }
         });
@@ -81,6 +87,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab5Id);
                 startActivity(intent);
             }
         });
@@ -89,6 +96,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab6Id);
                 startActivity(intent);
             }
         });
@@ -97,6 +105,7 @@ t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, Registration.class);
+                intent.putExtra("tableId", tab7Id);
                 startActivity(intent);
 
             }

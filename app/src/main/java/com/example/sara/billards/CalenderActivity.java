@@ -70,7 +70,13 @@ public class CalenderActivity extends AppCompatActivity {
 
                 context = getApplicationContext();
                 Intent intent = new Intent(context, HoursActivity.class);
-                intent.putExtra("DATE", date); // Here putting an extra text in e1
+                intent.putExtra("DATE", date); // wyslanie date w intent do klasy HoursActivity
+
+                Intent intent2 =getIntent(); //pobranie intentu RegistrationAct
+                int tableId= intent2.getIntExtra("tableId",1); // odebranie TableId
+                Log.e(TAG, "tableId from Registration class " + tableId);
+
+                intent.putExtra("tableId", tableId); // wyslanie tableId dalej->do HoursActivity
                 startActivity(intent);
 
             }

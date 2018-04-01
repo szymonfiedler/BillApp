@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class Registration extends Activity {
     private JSONArray latestRequestArray;
     CalenderActivity calenderActivity;
     Context context;
+    public static final String TAG = "RegistrationActivity";
     public static final String REQUEST_TAG = "Activity";
     public static final String REQUEST_TAG2 = "Activty **POST**";
 
@@ -32,6 +34,7 @@ public class Registration extends Activity {
         buttonGET = (Button) findViewById(R.id.buttonGET);
         buttonPOST = (Button) findViewById(R.id.buttonPOST);
         button_hours = (Button) findViewById(R.id.button_hours);
+
     }
 
     protected void onStart() {
@@ -64,9 +67,18 @@ public class Registration extends Activity {
         button_hours.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent =getIntent(); //pobranie intentu MainActivity
+                int tableId= intent.getIntExtra("tableId",1); // pobranie TableId z MainActivity->it work good
+
+                Log.e(TAG, "tableId from MainActivity  " + tableId);
+
+
+
+
                 context = getApplicationContext();
-                Intent intent = new Intent(context, CalenderActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(context, CalenderActivity.class);
+                intent2.putExtra("tableId", tableId);//wyslanie danych do CalenderActivity
+                startActivity(intent2);
             }
         });
     }
