@@ -12,13 +12,13 @@ import org.json.JSONObject;
 
 import java.util.Set;
 
-public class DefaultTableBookingRepository implements TableBookingRepository {
-    private static final String TAG = "TableBookingRepository";
-    private static DefaultTableBookingRepository singletonInstance;
+public class DefaultBookedTablesRepository implements BookedTablesRepository {
+    private static final String TAG = "BookedTablesRepository";
+    private static DefaultBookedTablesRepository singletonInstance;
     private final RequestQueue requestQueue;
     private final String targetUrl;
 
-    private DefaultTableBookingRepository(RequestQueue requestQueue,
+    private DefaultBookedTablesRepository(RequestQueue requestQueue,
                                           String targetUrl) {
         this.requestQueue = requestQueue;
         this.targetUrl = targetUrl;
@@ -26,28 +26,28 @@ public class DefaultTableBookingRepository implements TableBookingRepository {
 
     public static synchronized void createSingletonInstance(RequestQueue requestQueue, String targetUrl) {
         if (singletonInstance == null) {
-            Log.i(TAG, "Creating new instance DefaultTableBookingRepository");
-            singletonInstance = new DefaultTableBookingRepository(requestQueue, targetUrl);
+            Log.i(TAG, "Creating new instance DefaultBookedTablesRepository");
+            singletonInstance = new DefaultBookedTablesRepository(requestQueue, targetUrl);
         }
     }
 
-    public static DefaultTableBookingRepository getInstance() {
+    public static DefaultBookedTablesRepository getInstance() {
         if (singletonInstance == null) {
-            throw new RuntimeException("Instance of DefaultTableBookingRepository is not ready.");
+            throw new RuntimeException("Instance of DefaultBookedTablesRepository is not ready.");
         }
         return singletonInstance;
     }
 
     @Override
-    public void bookTable(BookTableRequest bookTableRequest,
-                          final Consumer<TableBookedResponse> bookedTableResponseHandler,
+    public void bookTable(TableOrder tableOrder,
+                          final Consumer<BookedTable> bookedTableResponseHandler,
                           Response.ErrorListener errorListener) {
-        JSONObject requestAsJson = toJson(bookTableRequest);
+        JSONObject requestAsJson = toJson(tableOrder);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, targetUrl, requestAsJson, response -> {
                 Log.i(TAG, "Received booked table event: " + response);
-                TableBookedResponse bookedResponse = toTableBookedResponse(response);
-                Log.i(TAG, "Trasformed to TableBookedResponse: " + bookedResponse);
+                BookedTable bookedResponse = toTableBookedResponse(response);
+                Log.i(TAG, "Trasformed to BookedTable: " + bookedResponse);
                 bookedTableResponseHandler.accept(bookedResponse);
         }, errorListener);
 
@@ -55,17 +55,17 @@ public class DefaultTableBookingRepository implements TableBookingRepository {
         requestQueue.add(request);
     }
 
-    private JSONObject toJson(BookTableRequest bookTableRequest) {
+    private JSONObject toJson(TableOrder tableOrder) {
 
         JSONObject sampleObject = null;
         try {
             sampleObject = new JSONObject();
-            sampleObject = sampleObject.put("ID_USER", bookTableRequest.getUserId());
-            sampleObject = sampleObject.put("ID_TABLE", bookTableRequest.getTableId());
-            sampleObject = sampleObject.put("CHARGE", bookTableRequest.getPrice());
-            sampleObject = sampleObject.put("HOUR_FROM", bookTableRequest.getStartHour());
-            sampleObject = sampleObject.put("HOUR_TO", bookTableRequest.getEndHour());
-            sampleObject = sampleObject.put("DATE", bookTableRequest.getDate());
+            sampleObject = sampleObject.put("ID_USER", tableOrder.getUserId());
+            sampleObject = sampleObject.put("ID_TABLE", tableOrder.getTableId());
+            sampleObject = sampleObject.put("CHARGE", tableOrder.getPrice());
+            sampleObject = sampleObject.put("HOUR_FROM", tableOrder.getStartHour());
+            sampleObject = sampleObject.put("HOUR_TO", tableOrder.getEndHour());
+            sampleObject = sampleObject.put("DATE", tableOrder.getDate());
         } catch (JSONException exception) {
             throw new RuntimeException("Problem with creating book table request.");
 
@@ -73,9 +73,9 @@ public class DefaultTableBookingRepository implements TableBookingRepository {
         return sampleObject;
     }
 
-    private TableBookedResponse toTableBookedResponse(JSONObject response) {
+    private BookedTable toTableBookedResponse(JSONObject response) {
         try {
-            return new TableBookedResponse(
+            return new BookedTable(
                     response.getInt("ID_RES"),
                     response.getInt("ID_TABLE"),
                     response.getString("DATE"),
@@ -89,7 +89,7 @@ public class DefaultTableBookingRepository implements TableBookingRepository {
 
     @Override
     public void getBookedTables(String date,
-                                Consumer<Set<TableBookedResponse>> bookedTablesResponseHandler,
+                                Consumer<Set<BookedTable>> bookedTablesResponseHandler,
                                 Response.ErrorListener errorListener) {
 
     }

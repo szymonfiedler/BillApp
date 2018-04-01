@@ -2,7 +2,7 @@ package com.example.sara.billards.booktable;
 
 import static java.util.Objects.*;
 
-public final class BookTableRequest {
+public final class TableOrder {
     private final int tableId;
     private final int userId;
     private final Double price;
@@ -10,7 +10,7 @@ public final class BookTableRequest {
     private final int endHour;
     private final String date;
 
-    private BookTableRequest(int tableId, int userId, Double price, int startHour, int endHour, String date) {
+    private TableOrder(int tableId, int userId, Double price, int startHour, int endHour, String date) {
         this.tableId = tableId;
         this.userId = userId;
         this.price = price;
@@ -49,7 +49,7 @@ public final class BookTableRequest {
 
     @Override
     public String toString() {
-        return "BookTableRequest{" +
+        return "TableOrder{" +
                 "tableId=" + tableId +
                 ", userId=" + userId +
                 ", price=" + price +
@@ -100,14 +100,14 @@ public final class BookTableRequest {
             return this;
         }
 
-        public BookTableRequest build() {
+        public TableOrder build() {
             requireNonNull(tableId, "tableId cannot be null");
             requireNonNull(userId, "userId cannot be null");
             requireNonNull(price, "price cannot be null");
             requireNonNull(startHour, "startHour cannot be null");
             requireNonNull(date, "date cannot be null");
 
-            return new BookTableRequest(
+            return new TableOrder(
                     tableId,
                     userId,
                     price,

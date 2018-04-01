@@ -1,7 +1,7 @@
 package com.example.sara.billards.booktable;
 
 
-public final class TableBookedResponse {
+public final class BookedTable {
     private final int reservationId;
     private final int tableId;
     private final String date;
@@ -9,12 +9,12 @@ public final class TableBookedResponse {
     private final int endHour;
     private final int charge;
 
-    public TableBookedResponse(int reservationId,
-                               int tableId,
-                               String date,
-                               int startHour,
-                               int endHour,
-                               int charge) {
+    public BookedTable(int reservationId,
+                       int tableId,
+                       String date,
+                       int startHour,
+                       int endHour,
+                       int charge) {
 
         this.reservationId = reservationId;
         this.tableId = tableId;
@@ -50,7 +50,7 @@ public final class TableBookedResponse {
 
     @Override
     public String toString() {
-        return "TableBookedResponse{" +
+        return "BookedTable{" +
                 "reservationId=" + reservationId +
                 ", tableId=" + tableId +
                 ", date='" + date + '\'' +

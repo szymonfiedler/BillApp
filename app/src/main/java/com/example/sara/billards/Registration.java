@@ -12,22 +12,22 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.sara.billards.booktable.DefaultTableBookingRepository;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 public class Registration extends Activity implements Response.Listener,
         Response.ErrorListener {
     private TextView mTextView;
-    private Button buttonGET,buttonPOST,button_hours;
+    private Button buttonGET, buttonPOST, button_hours;
     private RequestQueue mQueue;
     private JSONArray latestRequestArray;
     CalenderActivity calenderActivity;
-Context context;
+    Context context;
     public static final String REQUEST_TAG = "Activity";
     public static final String REQUEST_TAG2 = "Activty **POST**";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,32 +36,22 @@ Context context;
         mTextView = (TextView) findViewById(R.id.textView);
         buttonGET = (Button) findViewById(R.id.buttonGET);
         buttonPOST = (Button) findViewById(R.id.buttonPOST);
-        button_hours=(Button) findViewById(R.id.button_hours);
+        button_hours = (Button) findViewById(R.id.button_hours);
     }
+
     protected void onStart() {
         super.onStart();
         // Instantiate the RequestQueue.
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
         String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api2/";
-        DefaultTableBookingRepository.createSingletonInstance(mQueue, url);
+        DefaultBookedTablesRepository.createSingletonInstance(mQueue, url);
         final MyJSONArrayRequest jsonRequest = new MyJSONArrayRequest(Request.Method
                 .GET, url,
                 new JSONArray(), this, this);
-        JSONObject sampleObject = MyPOSTRequest.createSampleObject();
-        final MyPOSTRequest postRequest = new MyPOSTRequest(
-                url,
-                sampleObject,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        mTextView.setText("New reservation sent \nData:\n"+response);
-                    }
-                },
-                this);
+
 
         jsonRequest.setTag(REQUEST_TAG);
-        postRequest.setTag(REQUEST_TAG2);
 
         buttonGET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +62,7 @@ Context context;
         buttonPOST.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mQueue.add(postRequest);
+
             }
         });
 
@@ -113,10 +103,10 @@ Context context;
             int charge = latestRequestArray.getJSONObject(itemToDisplayId).getInt("CHARGE");
 
             String textToDisplay = "Response:" + "\n\n"
-                    + "Reservation " +(itemToDisplayId+1) +" details \n"
-                    +"ID: "+reservationId + ", table: " + tableId + "\n"
-                    + date + " (" + startHour + "-" + endHour+")"
-                    +"\nCharge: "+ charge + " zł";
+                    + "Reservation " + (itemToDisplayId + 1) + " details \n"
+                    + "ID: " + reservationId + ", table: " + tableId + "\n"
+                    + date + " (" + startHour + "-" + endHour + ")"
+                    + "\nCharge: " + charge + " zł";
             mTextView.setText(textToDisplay + "\n\nFull json array: \n\n" + response);
         } catch (JSONException e) {
             e.printStackTrace();

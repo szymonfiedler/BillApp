@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.sara.billards.booktable.BookTableRequest;
+import com.example.sara.billards.booktable.TableOrder;
+import com.example.sara.billards.booktable.BookedTable;
 import com.example.sara.billards.booktable.Consumer;
-import com.example.sara.billards.booktable.DefaultTableBookingRepository;
-import com.example.sara.billards.booktable.TableBookedResponse;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
 public class CalenderActivity extends AppCompatActivity {
     CalendarView calendar;
@@ -40,8 +40,8 @@ public class CalenderActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
 
-                DefaultTableBookingRepository.getInstance().bookTable(
-                        BookTableRequest.builder()
+                DefaultBookedTablesRepository.getInstance().bookTable(
+                        TableOrder.builder()
                                 .withTableId(1)
                                 .withUserId(1)
                                 .withPrice(15d)
@@ -49,9 +49,9 @@ public class CalenderActivity extends AppCompatActivity {
                                 .withEndHour(2)
                                 .withDate(date)
                                 .build(),
-                        new Consumer<TableBookedResponse>() {
+                        new Consumer<BookedTable>() {
                             @Override
-                            public void accept(TableBookedResponse bookedResponse) {
+                            public void accept(BookedTable bookedResponse) {
                                 Log.e(TAG, " Got Response " + bookedResponse);
                             }
                         }, new Response.ErrorListener() {
