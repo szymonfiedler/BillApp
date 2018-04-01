@@ -43,10 +43,7 @@ public class CalenderActivity extends AppCompatActivity {
                 Log.e(TAG, " date from PostRequest class " + date);
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
-                DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate(
-                        date,
-                        bookedTables -> Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables),
-                        error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
+
 
 //                DefaultBookedTablesRepository.getInstance().bookTable(
 //                        TableOrder.builder()

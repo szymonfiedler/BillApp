@@ -10,10 +10,20 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sara.billards.booktable.BookedTable;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+
 public class HoursActivity extends AppCompatActivity {
 TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour9,tvHour10,tvHour11,tvHour12;
     Button bHour1,bHour2,bHour3,bHour4,bHour5,bHour6,bHour7,bHour8,bHour9,bHour10,bHour11,bHour12;
     private static final String TAG = "HoursActivity";
+    private List<Button> allButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +56,20 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
         bHour11= (Button) findViewById(R.id.bHour11);
         bHour12= (Button) findViewById(R.id.bHour12);
 
+        allButtons = new ArrayList<>();
+        allButtons.add(bHour1);
+        allButtons.add(bHour2);
+        allButtons.add(bHour3);
+        allButtons.add(bHour4);
+        allButtons.add(bHour5);
+        allButtons.add(bHour6);
+        allButtons.add(bHour7);
+        allButtons.add(bHour8);
+        allButtons.add(bHour9);
+        allButtons.add(bHour10);
+        allButtons.add(bHour11);
+        allButtons.add(bHour12);
+
         bHour1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,9 +77,37 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
             }
         });
         Intent intent =getIntent(); // code to get data from previous activity
-        String date= intent.getStringExtra("getDate()"); // storing the data in variable e1
+        String date= intent.getStringExtra("DATE"); // storing the data in variable e1
 
         Log.e(TAG, "date from HoursActivity class " + date);
+        DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie
+                date,
+                1, //TODO put table id here
+                bookedTables -> {
+                    Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables);
+                    List<BookedTable> bookedTablesSortedByStartHour = new ArrayList<>(bookedTables);
+                    Collections.sort(bookedTablesSortedByStartHour, (o1, o2) -> o1.getStartHour() - o2.getStartHour());
+                    int currentHour = 11;
+
+                    for (BookedTable bookedTable: bookedTablesSortedByStartHour) {
+
+                        int startHour = bookedTable.getStartHour();
+                        int endHour = bookedTable.getEndHour();
+                        // hack
+                        if (startHour < 11) {
+                            startHour += 12;
+                            endHour += 12;
+                        }
+                        currentHour = startHour;
+                        for (int i = startHour; i < endHour; i++) {
+                            int indexOfButtonToBeDisabled = currentHour - 11;
+                            allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);
+                            currentHour++;
+                        }
+                    }
+
+                },
+                error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
 
     }
     public String takeHour() {

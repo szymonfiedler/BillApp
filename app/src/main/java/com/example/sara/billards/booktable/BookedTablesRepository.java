@@ -13,6 +13,7 @@ public interface BookedTablesRepository {
                          Response.ErrorListener errorListener);
 
     void getBookedTablesAtDate(String date,
+                               int tableId,
                                Consumer<Set<BookedTable>> bookedTablesResponseHandler,
                                Response.ErrorListener errorListener);
 }
