@@ -6,7 +6,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.sara.billards.MyJSONArrayRequest;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,10 +47,10 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
         JSONObject requestAsJson = toJson(tableOrder);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, targetUrl, requestAsJson, response -> {
-                Log.i(TAG, "Received booked table event: " + response);
-                BookedTable bookedResponse = toTableBookedResponse(response);
-                Log.i(TAG, "Trasformed to BookedTable: " + bookedResponse);
-                bookedTableResponseHandler.accept(bookedResponse);
+            Log.i(TAG, "Received booked table event: " + response);
+            BookedTable bookedResponse = toTableBookedResponse(response);
+            Log.i(TAG, "Trasformed to BookedTable: " + bookedResponse);
+            bookedTableResponseHandler.accept(bookedResponse);
         }, errorListener);
 
         Log.i(TAG, "Sending POST request with payload" + requestAsJson);
@@ -91,6 +93,13 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
     public void getBookedTables(String date,
                                 Consumer<Set<BookedTable>> bookedTablesResponseHandler,
                                 Response.ErrorListener errorListener) {
+        final MyJSONArrayRequest jsonRequest = new MyJSONArrayRequest(Request.Method
+                .GET, targetUrl,
+                new JSONArray(),
+                jsonArray -> Log.i(TAG, "Got booked tables: " + jsonArray),
+                error -> Log.e(TAG, "Got error response: " + error));
 
+        Log.i(TAG, "Sending GET request to " + targetUrl);
+        requestQueue.add(jsonRequest);
     }
 }
