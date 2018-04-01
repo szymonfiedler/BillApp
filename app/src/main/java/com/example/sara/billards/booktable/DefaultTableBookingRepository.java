@@ -10,35 +10,37 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DefaultTableBookingService implements TableBookingService {
-    private static final String TAG = "TableBookingService";
-    private static DefaultTableBookingService singletonInstance;
+import java.util.Set;
+
+public class DefaultTableBookingRepository implements TableBookingRepository {
+    private static final String TAG = "TableBookingRepository";
+    private static DefaultTableBookingRepository singletonInstance;
     private final RequestQueue requestQueue;
     private final String targetUrl;
 
-    private DefaultTableBookingService(RequestQueue requestQueue,
-                                       String targetUrl) {
+    private DefaultTableBookingRepository(RequestQueue requestQueue,
+                                          String targetUrl) {
         this.requestQueue = requestQueue;
         this.targetUrl = targetUrl;
     }
 
     public static synchronized void createSingletonInstance(RequestQueue requestQueue, String targetUrl) {
         if (singletonInstance == null) {
-            Log.i(TAG, "Creating new instance DefaultTableBookingService");
-            singletonInstance = new DefaultTableBookingService(requestQueue, targetUrl);
+            Log.i(TAG, "Creating new instance DefaultTableBookingRepository");
+            singletonInstance = new DefaultTableBookingRepository(requestQueue, targetUrl);
         }
     }
 
-    public static DefaultTableBookingService getInstance() {
+    public static DefaultTableBookingRepository getInstance() {
         if (singletonInstance == null) {
-            throw new RuntimeException("Instance of DefaultTableBookingService is not ready.");
+            throw new RuntimeException("Instance of DefaultTableBookingRepository is not ready.");
         }
         return singletonInstance;
     }
 
     @Override
     public void bookTable(BookTableRequest bookTableRequest,
-                          final BookedTableResponseHandler bookedTableResponseHandler,
+                          final Consumer<TableBookedResponse> bookedTableResponseHandler,
                           Response.ErrorListener errorListener) {
         JSONObject requestAsJson = toJson(bookTableRequest);
 
@@ -46,7 +48,7 @@ public class DefaultTableBookingService implements TableBookingService {
                 Log.i(TAG, "Received booked table event: " + response);
                 TableBookedResponse bookedResponse = toTableBookedResponse(response);
                 Log.i(TAG, "Trasformed to TableBookedResponse: " + bookedResponse);
-                bookedTableResponseHandler.handle(bookedResponse);
+                bookedTableResponseHandler.accept(bookedResponse);
         }, errorListener);
 
         Log.i(TAG, "Sending POST request with payload" + requestAsJson);
@@ -83,5 +85,12 @@ public class DefaultTableBookingService implements TableBookingService {
         } catch (JSONException e) {
             throw new RuntimeException("Unexpected response from server", e);
         }
+    }
+
+    @Override
+    public void getBookedTables(String date,
+                                Consumer<Set<TableBookedResponse>> bookedTablesResponseHandler,
+                                Response.ErrorListener errorListener) {
+
     }
 }

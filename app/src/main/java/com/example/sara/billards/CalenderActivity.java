@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.sara.billards.booktable.BookTableRequest;
-import com.example.sara.billards.booktable.BookedTableResponseHandler;
-import com.example.sara.billards.booktable.DefaultTableBookingService;
+import com.example.sara.billards.booktable.Consumer;
+import com.example.sara.billards.booktable.DefaultTableBookingRepository;
 import com.example.sara.billards.booktable.TableBookedResponse;
 
 public class CalenderActivity extends AppCompatActivity {
@@ -40,7 +40,7 @@ public class CalenderActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
 
-                DefaultTableBookingService.getInstance().bookTable(
+                DefaultTableBookingRepository.getInstance().bookTable(
                         BookTableRequest.builder()
                                 .withTableId(1)
                                 .withUserId(1)
@@ -49,9 +49,9 @@ public class CalenderActivity extends AppCompatActivity {
                                 .withEndHour(2)
                                 .withDate(date)
                                 .build(),
-                        new BookedTableResponseHandler() {
+                        new Consumer<TableBookedResponse>() {
                             @Override
-                            public void handle(TableBookedResponse bookedResponse) {
+                            public void accept(TableBookedResponse bookedResponse) {
                                 Log.e(TAG, " Got Response " + bookedResponse);
                             }
                         }, new Response.ErrorListener() {

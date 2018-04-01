@@ -1,7 +1,5 @@
 package com.example.sara.billards;
 
-import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.example.sara.billards.booktable.BookTableRequest;
-import com.example.sara.billards.booktable.BookedTableResponseHandler;
-import com.example.sara.billards.booktable.DefaultTableBookingService;
-import com.example.sara.billards.booktable.TableBookedResponse;
 
 public class HoursActivity extends AppCompatActivity {
 TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour9,tvHour10,tvHour11,tvHour12;
