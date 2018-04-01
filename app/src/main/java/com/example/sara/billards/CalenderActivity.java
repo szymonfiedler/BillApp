@@ -16,6 +16,9 @@ import com.example.sara.billards.booktable.BookedTable;
 import com.example.sara.billards.booktable.Consumer;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 public class CalenderActivity extends AppCompatActivity {
     CalendarView calendar;
     Context context;
@@ -34,34 +37,39 @@ public class CalenderActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 Toast.makeText(getBaseContext(), "selected date:" + year + "/" + month + "/" + dayOfMonth, Toast.LENGTH_LONG).show();
-
-                date = year + "-" + month + "-" + dayOfMonth; //format of date->date_id
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, dayOfMonth);
+                date = DateUtils.formatDate(calendar.getTime());
                 Log.e(TAG, " date from PostRequest class " + date);
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
+                DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate(
+                        date,
+                        bookedTables -> Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables),
+                        error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
 
-                DefaultBookedTablesRepository.getInstance().bookTable(
-                        TableOrder.builder()
-                                .withTableId(1)
-                                .withUserId(1)
-                                .withPrice(15d)
-                                .withStartHour(1)
-                                .withEndHour(2)
-                                .withDate(date)
-                                .build(),
-                        new Consumer<BookedTable>() {
-                            @Override
-                            public void accept(BookedTable bookedResponse) {
-                                Log.e(TAG, " Got Response " + bookedResponse);
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.e(TAG, " Got Error " + error.getMessage());
-                            }
-                        }
-
-                );
+//                DefaultBookedTablesRepository.getInstance().bookTable(
+//                        TableOrder.builder()
+//                                .withTableId(1)
+//                                .withUserId(1)
+//                                .withPrice(15d)
+//                                .withStartHour(1)
+//                                .withEndHour(2)
+//                                .withDate(date)
+//                                .build(),
+//                        new Consumer<BookedTable>() {
+//                            @Override
+//                            public void accept(BookedTable bookedResponse) {
+//                                Log.e(TAG, " Got Response " + bookedResponse);
+//                            }
+//                        }, new Response.ErrorListener() {
+//                            @Override
+//                            public void onErrorResponse(VolleyError error) {
+//                                Log.e(TAG, " Got Error " + error.getMessage());
+//                            }
+//                        }
+//
+//                );
 
                 context = getApplicationContext();
                 Intent intent = new Intent(context, HoursActivity.class);

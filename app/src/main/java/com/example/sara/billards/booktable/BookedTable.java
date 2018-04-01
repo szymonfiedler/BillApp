@@ -1,6 +1,8 @@
 package com.example.sara.billards.booktable;
 
 
+import java.util.Objects;
+
 public final class BookedTable {
     private final int reservationId;
     private final int tableId;
@@ -58,5 +60,23 @@ public final class BookedTable {
                 ", endHour=" + endHour +
                 ", charge=" + charge +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookedTable that = (BookedTable) o;
+        return reservationId == that.reservationId &&
+                tableId == that.tableId &&
+                startHour == that.startHour &&
+                endHour == that.endHour &&
+                charge == that.charge &&
+                Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(reservationId, tableId, date, startHour, endHour, charge);
     }
 }

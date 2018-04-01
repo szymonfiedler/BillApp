@@ -118,10 +118,21 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
     }
 
     @Override
-    public void getBookedTablesAtDate(String date, Consumer<Set<BookedTable>> bookedTablesResponseHandler, Response.ErrorListener errorListener) {
-//        getBookedTables(
-//                bookedTables -> {},
-//                error -> {}
-//        )
+    public void getBookedTablesAtDate(String date,
+                                      Consumer<Set<BookedTable>> bookedTablesResponseHandler,
+                                      Response.ErrorListener errorListener) {
+        getBookedTables(
+                bookedTables -> bookedTablesResponseHandler.accept(filterBookedTableAtDate(date, bookedTables)),
+                errorListener);
+    }
+
+    private Set<BookedTable> filterBookedTableAtDate(String date, Set<BookedTable> allBookedTables) {
+        Set<BookedTable> bookedTableAtDate = new HashSet<>();
+        for (BookedTable bookedTable: allBookedTables) {
+            if (bookedTable.getDate().equals(date)) {
+                bookedTableAtDate.add(bookedTable);
+            }
+        }
+        return bookedTableAtDate;
     }
 }
