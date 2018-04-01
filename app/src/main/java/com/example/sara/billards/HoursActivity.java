@@ -1,5 +1,6 @@
 package com.example.sara.billards;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sara.billards.booktable.BookedTable;
+import com.example.sara.billards.booktable.Consumer;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
+import com.example.sara.billards.booktable.EndActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +27,8 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
     Button bHour1,bHour2,bHour3,bHour4,bHour5,bHour6,bHour7,bHour8,bHour9,bHour10,bHour11,bHour12;
     private static final String TAG = "HoursActivity";
     private List<Button> allButtons;
-
+Context context;
+    BookedTable bookedTable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,16 +74,6 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
         allButtons.add(bHour11);
         allButtons.add(bHour12);
 
-
-
-
-        //Log.e(TAG, "tableId from Registration class " + tableId);
-        bHour1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               takeHour();
-            }
-        });
         Intent intent =getIntent(); //pobranie intentu CalenderActivity
         String date= intent.getStringExtra("DATE"); // pobranie danych z CalendAractivity
 
@@ -89,6 +83,23 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
 
         Log.e(TAG, "tableId  " + tableId);
         Log.e(TAG, "date from HoursActivity class " + date);
+
+        //Log.e(TAG, "tableId from Registration class " + tableId);
+        bHour1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeHour();
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+               // intent.putExtra("Start_Hour", bookedTable.getStartHour()); tu musisz wyjac date x textview
+               // Log.e(TAG, " bookedTable " + bookedTable.getStartHour());
+                startActivity(intent);
+
+            }
+        });
+
 
         DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
                 date,
@@ -114,6 +125,7 @@ TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour
                             allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);//wygasniecie przycisku buttonu jesli godzina jest zarezerowwana w bazie danych
                             currentHour++;
                         }
+
                     }
 
                 },

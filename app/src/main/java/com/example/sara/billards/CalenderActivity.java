@@ -40,7 +40,6 @@ public class CalenderActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, dayOfMonth);
                 date = DateUtils.formatDate(calendar.getTime());
-                Log.e(TAG, " date from PostRequest class " + date);
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
 
@@ -74,7 +73,6 @@ public class CalenderActivity extends AppCompatActivity {
 
                 Intent intent2 =getIntent(); //pobranie intentu RegistrationAct
                 int tableId= intent2.getIntExtra("tableId",1); // odebranie TableId
-                Log.e(TAG, "tableId from Registration class " + tableId);
 
                 intent.putExtra("tableId", tableId); // wyslanie tableId dalej->do HoursActivity
                 startActivity(intent);
