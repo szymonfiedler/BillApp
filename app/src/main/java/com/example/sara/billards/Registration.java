@@ -47,7 +47,6 @@ public class Registration extends Activity {
             @Override
             public void onClick(View v) {
                 DefaultBookedTablesRepository.getInstance().getBookedTables(
-                        "dummy",
                         bookedTables -> {
                             mTextView.setText(bookedTables.toString());
                         },

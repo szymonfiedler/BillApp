@@ -12,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class DefaultBookedTablesRepository implements BookedTablesRepository {
@@ -48,7 +49,7 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, targetUrl, requestAsJson, response -> {
             Log.i(TAG, "Received booked table event: " + response);
-            BookedTable bookedResponse = toTableBookedResponse(response);
+            BookedTable bookedResponse = toBookedTable(response);
             Log.i(TAG, "Trasformed to BookedTable: " + bookedResponse);
             bookedTableResponseHandler.accept(bookedResponse);
         }, errorListener);
@@ -75,7 +76,7 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
         return sampleObject;
     }
 
-    private BookedTable toTableBookedResponse(JSONObject response) {
+    private BookedTable toBookedTable(JSONObject response) {
         try {
             return new BookedTable(
                     response.getInt("ID_RES"),
@@ -90,16 +91,37 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
     }
 
     @Override
-    public void getBookedTables(String date,
-                                Consumer<Set<BookedTable>> bookedTablesResponseHandler,
+    public void getBookedTables(Consumer<Set<BookedTable>> bookedTablesResponseHandler,
                                 Response.ErrorListener errorListener) {
         final MyJSONArrayRequest jsonRequest = new MyJSONArrayRequest(Request.Method
                 .GET, targetUrl,
                 new JSONArray(),
-                jsonArray -> Log.i(TAG, "Got booked tables: " + jsonArray),
+                jsonArray -> {
+                    Log.i(TAG, "Got booked tables: " + jsonArray);
+                    Set<BookedTable> bookedTables = new HashSet<>();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject bookedTableAsJson = null;
+                        try {
+                            bookedTableAsJson = jsonArray.getJSONObject(i);
+                            BookedTable bookedTable = toBookedTable(bookedTableAsJson);
+                            bookedTables.add(bookedTable);
+                        } catch (JSONException e) {
+                            Log.i(TAG, "Could transform json to BookedTable: " + e.getMessage());
+                        }
+                    }
+                    bookedTablesResponseHandler.accept(bookedTables);
+                },
                 error -> Log.e(TAG, "Got error response: " + error));
 
         Log.i(TAG, "Sending GET request to " + targetUrl);
         requestQueue.add(jsonRequest);
+    }
+
+    @Override
+    public void getBookedTablesAtDate(String date, Consumer<Set<BookedTable>> bookedTablesResponseHandler, Response.ErrorListener errorListener) {
+//        getBookedTables(
+//                bookedTables -> {},
+//                error -> {}
+//        )
     }
 }

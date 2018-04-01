@@ -9,7 +9,10 @@ public interface BookedTablesRepository {
                    Consumer<BookedTable> bookedTableResponseHandler,
                    Response.ErrorListener errorListener);
 
-    void getBookedTables(String date,
-                         Consumer<Set<BookedTable>> bookedTablesResponseHandler,
+    void getBookedTables(Consumer<Set<BookedTable>> bookedTablesResponseHandler,
                          Response.ErrorListener errorListener);
+
+    void getBookedTablesAtDate(String date,
+                               Consumer<Set<BookedTable>> bookedTablesResponseHandler,
+                               Response.ErrorListener errorListener);
 }
