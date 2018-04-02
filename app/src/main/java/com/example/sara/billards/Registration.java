@@ -73,8 +73,6 @@ public class Registration extends Activity {
                 Log.e(TAG, "tableId from MainActivity  " + tableId);
 
 
-
-
                 context = getApplicationContext();
                 Intent intent2 = new Intent(context, CalenderActivity.class);
                 intent2.putExtra("tableId", tableId);//send date to CalenderActivity

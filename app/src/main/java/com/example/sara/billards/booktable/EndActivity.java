@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.example.sara.billards.R;
 
 public class EndActivity extends AppCompatActivity {
@@ -62,6 +64,28 @@ public class EndActivity extends AppCompatActivity {
         buttonPUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                DefaultBookedTablesRepository.getInstance().bookTable(
+                        TableOrder.builder()
+                                .withTableId(tableId)
+                                .withUserId(1)
+                                .withPrice(15d)
+                                .withStartHour(startHour)
+                                .withEndHour(endHour)
+                                .withDate(date)
+                                .build(),
+                        new Consumer<BookedTable>() {
+                            @Override
+                            public void accept(BookedTable bookedResponse) {
+                                Log.e(TAG, " Got Response " + bookedResponse);
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e(TAG, " Got Error " + error.getMessage());
+                            }
+                        }
+                );
 
             }
         });

@@ -6,11 +6,11 @@ public final class TableOrder {
     private final int tableId;
     private final int userId;
     private final Double price;
-    private final int startHour;
-    private final int endHour;
+    private final String startHour;
+    private final String endHour;
     private final String date;
 
-    private TableOrder(int tableId, int userId, Double price, int startHour, int endHour, String date) {
+    private TableOrder(int tableId, int userId, Double price, String startHour, String endHour, String date) {
         this.tableId = tableId;
         this.userId = userId;
         this.price = price;
@@ -35,7 +35,7 @@ public final class TableOrder {
         return price;
     }
 
-    public int getStartHour() {
+    public String getStartHour() {
         return startHour;
     }
 
@@ -43,7 +43,7 @@ public final class TableOrder {
         return date;
     }
 
-    public int getEndHour() {
+    public String getEndHour() {
         return endHour;
     }
 
@@ -63,8 +63,8 @@ public final class TableOrder {
         private Integer tableId;
         private Integer userId;
         private Double price;
-        private Integer startHour;
-        private Integer endHour;
+        private String startHour;
+        private String endHour;
         private String date;
 
         private Builder() {
@@ -85,12 +85,12 @@ public final class TableOrder {
             return this;
         }
 
-        public Builder withStartHour(int startHour) {
+        public Builder withStartHour(String startHour) {
             this.startHour = startHour;
             return this;
         }
 
-        public Builder withEndHour(int endHour) {
+        public Builder withEndHour(String endHour) {
             this.endHour = endHour;
             return this;
         }
