@@ -14,16 +14,19 @@ public class EndActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);
 
-        Intent intent =getIntent(); //pobranie intentu z HoursActivity
+        Intent intent =getIntent(); //intent from HoursActivity
         String date= intent.getStringExtra("DATE");
 
         int tableId= intent.getIntExtra("tableId",1);
 
+        String startHour= intent.getStringExtra("startHour");
+        String endHour= intent.getStringExtra("endHour");
 
         Log.e(TAG, "tableId  " + tableId);
         Log.e(TAG, "date from HoursActivity class " + date);
 
-
+        Log.e(TAG, "startHour " +startHour);
+        Log.e(TAG, "endHour " +endHour);
 
 
 

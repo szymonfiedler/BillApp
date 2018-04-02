@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class HoursActivity extends AppCompatActivity {
-TextView tvHour1, tvHour2,tvHour3,tvHour4,tvHour5,tvHour6,tvHour7,tvHour8,tvHour9,tvHour10,tvHour11,tvHour12;
+TextView tvHour11, tvHour12,tvHour12b,tvHour13,tvHour13b,tvHour14,tvHour14b,tvHour15,tvHour15b,tvHour16,tvHour16b,tvHour17,tvHour17b,tvHour18,tvHour18b,tvHour19,tvHour19b,tvHour20,tvHour20b,tvHour21,tvHour21b,tvHour22,tvHour22b,tvHour23;
     Button bHour1,bHour2,bHour3,bHour4,bHour5,bHour6,bHour7,bHour8,bHour9,bHour10,bHour11,bHour12;
     private static final String TAG = "HoursActivity";
     private List<Button> allButtons;
@@ -34,18 +34,30 @@ Context context;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hours);
 
-        tvHour1 = (TextView) findViewById(R.id.tvHour1);
-        tvHour2 = (TextView) findViewById(R.id.tvHour2);
-        tvHour3 = (TextView) findViewById(R.id.tvHour3);
-        tvHour4 = (TextView) findViewById(R.id.tvHour4);
-        tvHour5 = (TextView) findViewById(R.id.tvHour5);
-        tvHour6 = (TextView) findViewById(R.id.tvHour6);
-        tvHour7 = (TextView) findViewById(R.id.tvHour7);
-        tvHour8 = (TextView) findViewById(R.id.tvHour8);
-        tvHour9 = (TextView) findViewById(R.id.tvHour9);
-        tvHour10 = (TextView) findViewById(R.id.tvHour10);
         tvHour11 = (TextView) findViewById(R.id.tvHour11);
         tvHour12 = (TextView) findViewById(R.id.tvHour12);
+        tvHour12b = (TextView) findViewById(R.id.tvHour12b);
+        tvHour13 = (TextView) findViewById(R.id.tvHour13);
+        tvHour13b = (TextView) findViewById(R.id.tvHour13b);
+        tvHour14 = (TextView) findViewById(R.id.tvHour14);
+        tvHour14b = (TextView) findViewById(R.id.tvHour14b);
+        tvHour15 = (TextView) findViewById(R.id.tvHour15);
+        tvHour15b = (TextView) findViewById(R.id.tvHour15b);
+        tvHour16 = (TextView) findViewById(R.id.tvHour16);
+        tvHour16b = (TextView) findViewById(R.id.tvHour16b);
+        tvHour17 = (TextView) findViewById(R.id.tvHour17);
+        tvHour17b = (TextView) findViewById(R.id.tvHour17b);
+        tvHour18 = (TextView) findViewById(R.id.tvHour18);
+        tvHour18b = (TextView) findViewById(R.id.tvHour18b);
+        tvHour19 = (TextView) findViewById(R.id.tvHour19);
+        tvHour19b = (TextView) findViewById(R.id.tvHour19b);
+        tvHour20 = (TextView) findViewById(R.id.tvHour20);
+        tvHour20b = (TextView) findViewById(R.id.tvHour20b);
+        tvHour21 = (TextView) findViewById(R.id.tvHour21);
+        tvHour21b = (TextView) findViewById(R.id.tvHour21b);
+        tvHour22 = (TextView) findViewById(R.id.tvHour22);
+        tvHour22b = (TextView) findViewById(R.id.tvHour22b);
+        tvHour23 = (TextView) findViewById(R.id.tvHour23);
 
         bHour1= (Button) findViewById(R.id.bHour1);
         bHour2= (Button) findViewById(R.id.bHour2);
@@ -74,10 +86,10 @@ Context context;
         allButtons.add(bHour11);
         allButtons.add(bHour12);
 
-        Intent intent =getIntent(); //pobranie intentu CalenderActivity
-        String date= intent.getStringExtra("DATE"); // pobranie danych z CalendAractivity
+        Intent intent =getIntent(); //get CalenderActivity intent
+        String date= intent.getStringExtra("DATE"); // get date from CalendAractivity
 
-        Intent intent2 =getIntent(); //pobranie intentu RegistrationAct
+        Intent intent2 =getIntent(); //get RegistrationActivity intent
         int tableId= intent2.getIntExtra("tableId",1);
 
 
@@ -88,18 +100,174 @@ Context context;
         bHour1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takeHour();
+                //takeHour();
+                bHour1.setBackgroundColor(Color.RED);
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-               // intent.putExtra("Start_Hour", bookedTable.getStartHour()); tu musisz wyjac date x textview
-               // Log.e(TAG, " bookedTable " + bookedTable.getStartHour());
+                intent.putExtra("startHour",tvHour11.getText().toString());
+                intent.putExtra("endHour",tvHour12.getText().toString());
+                // intent.putExtra("Start_Hour", bookedTable.getStartHour());
                 startActivity(intent);
 
             }
         });
 
+        bHour2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour2.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour12b.getText().toString());
+                intent.putExtra("endHour",tvHour13.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour3.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour13b.getText().toString());
+                intent.putExtra("endHour",tvHour14.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour4.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour14b.getText().toString());
+                intent.putExtra("endHour",tvHour15.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour5.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour15b.getText().toString());
+                intent.putExtra("endHour",tvHour16.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour6.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour16b.getText().toString());
+                intent.putExtra("endHour",tvHour17.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour7.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour17b.getText().toString());
+                intent.putExtra("endHour",tvHour18.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour8.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour18b.getText().toString());
+                intent.putExtra("endHour",tvHour19.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour9.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour19b.getText().toString());
+                intent.putExtra("endHour",tvHour20.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour10.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour20b.getText().toString());
+                intent.putExtra("endHour",tvHour21.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour11.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour21b.getText().toString());
+                intent.putExtra("endHour",tvHour22.getText().toString());
+
+                startActivity(intent);
+            }
+        });
+        bHour12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bHour12.setBackgroundColor(Color.RED);
+                context = getApplicationContext();
+                Intent intent = new Intent(context, EndActivity.class);
+                intent.putExtra("tableId",tableId);
+                intent.putExtra("DATE",date);
+                intent.putExtra("startHour",tvHour22b.getText().toString());
+                intent.putExtra("endHour",tvHour23.getText().toString());
+
+                startActivity(intent);
+            }
+        });
 
         DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
                 date,
@@ -132,12 +300,12 @@ Context context;
                 error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
 
     }
-    public String takeHour() {
-        bHour1.setBackgroundColor(Color.RED);
-        String hour=tvHour1.getText().toString();
-        Toast.makeText(getApplicationContext(), "click " + hour, Toast.LENGTH_SHORT).show();
-        return hour;
-    }
+//    public String takeHour() {
+//        bHour1.setBackgroundColor(Color.RED);
+//        String hour=tvHour11.getText().toString();
+//        Toast.makeText(getApplicationContext(), "click " + hour, Toast.LENGTH_SHORT).show();
+//        return hour;
+//    }
 
 
 }

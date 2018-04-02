@@ -67,8 +67,8 @@ public class Registration extends Activity {
         button_hours.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =getIntent(); //pobranie intentu MainActivity
-                int tableId= intent.getIntExtra("tableId",1); // pobranie TableId z MainActivity->it work good
+                Intent intent =getIntent(); //intent from MainActivity
+                int tableId= intent.getIntExtra("tableId",1); //  TableId from MainActivity->it work good
 
                 Log.e(TAG, "tableId from MainActivity  " + tableId);
 
@@ -77,7 +77,7 @@ public class Registration extends Activity {
 
                 context = getApplicationContext();
                 Intent intent2 = new Intent(context, CalenderActivity.class);
-                intent2.putExtra("tableId", tableId);//wyslanie danych do CalenderActivity
+                intent2.putExtra("tableId", tableId);//send date to CalenderActivity
                 startActivity(intent2);
             }
         });
