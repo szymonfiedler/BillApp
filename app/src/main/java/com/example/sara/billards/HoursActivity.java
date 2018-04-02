@@ -271,7 +271,7 @@ Context context;
 
         DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
                 date,
-                tableId, //TODO put table id here (pobierz idTable z poczatkowej activity.wyslij PUT dopiero w endActivity na samym koncu)
+                tableId,
                 bookedTables -> {
                     Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables);
                     List<BookedTable> bookedTablesSortedByStartHour = new ArrayList<>(bookedTables);

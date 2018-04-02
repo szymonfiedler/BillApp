@@ -5,21 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sara.billards.booktable.EndActivity">
+
+    <TableLayout
+        android:layout_width="358dp"
+        android:layout_height="484dp"
+        android:layout_marginLeft="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481"
+        android:layout_marginStart="13dp">
+
+    <TableRow
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+
     <Button
-        android:id="@+id/buttonPOST"
+        android:id="@+id/buttonPUT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="POST"
-        tools:layout_editor_absoluteY="50dp"
+        tools:layout_editor_absoluteY="182dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.445" />
+</TableRow>
+    <TableRow>
     <Button
         android:id="@+id/buttonGET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GET DATE"
-        tools:layout_editor_absoluteY="198dp"
+        android:text="GET all date from base"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034" />
+    </TableRow>
+
+    <TableRow>
+    <Button
+        android:id="@+id/buttonShowMyChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show my choice"
+        tools:layout_editor_absoluteY="94dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.45" />
+    </TableRow>
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    </ScrollView>
+    </TableLayout>
 </android.support.constraint.ConstraintLayout>
