@@ -43,30 +43,6 @@ public class CalenderActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
 
-
-//                DefaultBookedTablesRepository.getInstance().bookTable(
-//                        TableOrder.builder()
-//                                .withTableId(1)
-//                                .withUserId(1)
-//                                .withPrice(15d)
-//                                .withStartHour(1)
-//                                .withEndHour(2)
-//                                .withDate(date)
-//                                .build(),
-//                        new Consumer<BookedTable>() {
-//                            @Override
-//                            public void accept(BookedTable bookedResponse) {
-//                                Log.e(TAG, " Got Response " + bookedResponse);
-//                            }
-//                        }, new Response.ErrorListener() {
-//                            @Override
-//                            public void onErrorResponse(VolleyError error) {
-//                                Log.e(TAG, " Got Error " + error.getMessage());
-//                            }
-//                        }
-//
-//                );
-
                 context = getApplicationContext();
                 Intent intent = new Intent(context, HoursActivity.class);
                 intent.putExtra("DATE", date); // wyslanie date w intent do klasy HoursActivity

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-android:background="#000000">
-
+    android:background="@drawable/back">
     <ImageView
         android:layout_width="200dp"
         android:layout_height="80dp"
@@ -13,6 +12,8 @@ android:background="#000000">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET reservations"
+        android:textColor="#FFFFFF"
+        android:background="#4d79ff"
         android:id="@+id/buttonGET"
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
@@ -23,7 +24,8 @@ android:background="#000000">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="POST new"
+        android:background="#4d79ff"
+        android:textColor="#FFFFFF"
         android:id="@+id/buttonPOST"
         android:layout_below="@+id/buttonGET"
         android:layout_alignLeft="@+id/buttonGET"
@@ -47,6 +49,8 @@ android:background="#000000">
 
     <Button
         android:id="@+id/button_hours"
+        android:textColor="#FFFFFF"
+        android:background="#4d79ff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonGET"

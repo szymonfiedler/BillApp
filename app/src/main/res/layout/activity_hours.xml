@@ -50,7 +50,7 @@
                 android:id="@+id/bHour1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="Button1"
+                android:text="reserve"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,7 +80,7 @@
                 android:id="@+id/bHour2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button2" />
+                android:text="reserve" />
         </TableRow>
 
         <TableRow
@@ -106,7 +106,7 @@
                 android:id="@+id/bHour3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
 
         </TableRow>
 
@@ -133,7 +133,7 @@
                 android:id="@+id/bHour4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
 
         </TableRow>
 
@@ -160,7 +160,7 @@
                 android:id="@+id/bHour5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
         </TableRow>
 
         <TableRow
@@ -186,7 +186,7 @@
                 android:id="@+id/bHour6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
 
         </TableRow>
 
@@ -213,7 +213,7 @@
                 android:id="@+id/bHour7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
         </TableRow>
 
         <TableRow
@@ -239,7 +239,7 @@
                 android:id="@+id/bHour8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
 
         </TableRow>
 
@@ -266,7 +266,7 @@
                 android:id="@+id/bHour9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
         </TableRow>
 
         <TableRow
@@ -291,7 +291,7 @@
                 android:id="@+id/bHour10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
         </TableRow>
 
         <TableRow
@@ -317,7 +317,7 @@
                 android:id="@+id/bHour11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
 
         </TableRow>
 
@@ -344,7 +344,7 @@
                 android:id="@+id/bHour12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="reserve" />
         </TableRow>
     </TableLayout>
 

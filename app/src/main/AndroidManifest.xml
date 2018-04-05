@@ -34,7 +34,7 @@
         <activity android:name=".User_reg" />
         <activity android:name=".HoursActivity" />
         <activity android:name=".CalenderActivity" />
-        <activity android:name=".booktable.EndActivity"></activity>
+        <activity android:name=".EndActivity"></activity>
     </application>
 
 </manifest>

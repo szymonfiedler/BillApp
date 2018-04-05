@@ -9,17 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.sara.billards.booktable.BookedTable;
-import com.example.sara.billards.booktable.Consumer;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
-import com.example.sara.billards.booktable.EndActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 public class HoursActivity extends AppCompatActivity {
@@ -300,12 +295,6 @@ Context context;
                 error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
 
     }
-//    public String takeHour() {
-//        bHour1.setBackgroundColor(Color.RED);
-//        String hour=tvHour11.getText().toString();
-//        Toast.makeText(getApplicationContext(), "click " + hour, Toast.LENGTH_SHORT).show();
-//        return hour;
-//    }
 
 
 }

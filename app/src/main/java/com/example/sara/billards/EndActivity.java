@@ -1,4 +1,4 @@
-package com.example.sara.billards.booktable;
+package com.example.sara.billards;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,10 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.sara.billards.R;
+import com.example.sara.billards.booktable.BookedTable;
+import com.example.sara.billards.booktable.Consumer;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
+import com.example.sara.billards.booktable.TableOrder;
 
 public class EndActivity extends AppCompatActivity {
     Button buttonPUT,buttonGET, buttonShowMyChoice;

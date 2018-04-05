@@ -18,21 +18,21 @@
             android:orientation="horizontal">
             <!-- Logo Start-->
             <!--<ImageView-->
-                <!--android:id="@+id/imageView"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="10dip"-->
-                <!--android:src="@drawable/logo" />-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dip"-->
+            <!--android:src="@drawable/logo" />-->
             <!-- Logo Ends -->
         </LinearLayout>
         <!--  Header Ends -->
         <!-- Footer Start -->
         <!--<LinearLayout android:id="@+id/footer"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="90dip"-->
-            <!--android:background="@layout/footer_repeat"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:orientation="vertical">-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="90dip"-->
+        <!--android:background="@layout/footer_repeat"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:orientation="vertical">-->
         <!--</LinearLayout>-->
         <!-- Footer Ends -->
 
@@ -49,7 +49,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
                 android:text="Email"/>
-            <EditText android:layout_width="fill_parent"
+            <EditText android:id="@+id/email"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
@@ -59,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
                 android:text="Password"/>
-            <EditText android:layout_width="fill_parent"
+            <EditText android:id="@+id/pass"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
                 android:singleLine="true"

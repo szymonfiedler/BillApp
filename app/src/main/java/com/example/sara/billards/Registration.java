@@ -16,7 +16,7 @@ import org.json.JSONArray;
 
 public class Registration extends Activity {
     private TextView mTextView;
-    private Button buttonGET, buttonPOST, button_hours;
+    private Button buttonGET, button_hours,buttonPOST;
     private RequestQueue mQueue;
     private JSONArray latestRequestArray;
     CalenderActivity calenderActivity;
