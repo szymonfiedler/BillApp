@@ -29,12 +29,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Inf" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".registration.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".User_reg" />
+        <activity android:name=".registration.User_reg" />
         <activity android:name=".HoursActivity" />
         <activity android:name=".CalenderActivity" />
         <activity android:name=".EndActivity"></activity>
+
+        <activity android:name=".After_registration"></activity>
+        <activity android:name=".Prices"></activity>
     </application>
 
 </manifest>

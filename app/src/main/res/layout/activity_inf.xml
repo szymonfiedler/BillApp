@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sara.billards.Inf"
-    android:background="@drawable/back">
+    android:background="@drawable/backgroundsm">
 
     <TextView
         android:id="@+id/tvinf"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:text="sth about club"
-        android:textColor="#FFFFFF"
+        android:layout_width="240dp"
+        android:layout_height="0dp"
         android:layout_above="@+id/t2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:text="Billards Club"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="104dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="131dp"
+        android:layout_height="66dp"
+        android:src="@drawable/logo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvcredits"
+            android:layout_width="359dp"
+            android:layout_height="41dp"
+            android:layout_above="@+id/t2"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:lines="2"
+            android:text="Backgroud created by Kjpargeter - Freepik.com \n Icon made by Freepik from www.flaticon.com "
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            tools:ignore="MissingConstraints" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

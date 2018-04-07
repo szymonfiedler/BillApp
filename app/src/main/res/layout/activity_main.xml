@@ -1,119 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/back">
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TableRow>
-
-
-    </TableRow>
-    <TableRow>
-
-    </TableRow>
-    <TableRow>
-
-    </TableRow>
-
-
-    </TableLayout>
-
-    <TextView
-        android:id="@+id/t3"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="54dp"
-        android:text="table3"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:text="table1"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:layout_marginEnd="11dp"
-        android:layout_alignTop="@+id/t6"
-        android:layout_toStartOf="@+id/t6"
-        android:layout_marginTop="14dp" />
-
-    <TextView
-        android:id="@+id/t2"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="27dp"
-        android:text="table2"
-        android:textColor="#FFFFFF"
-        android:layout_above="@+id/t3"
-        android:layout_toEndOf="@+id/t6" />
-
-    <TextView
-        android:id="@+id/t6"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:text="table6"
-        android:textColor="#FFFFFF"
-        android:layout_above="@+id/t2"
-        android:layout_alignStart="@+id/t3" />
-
-    <TextView
-    android:id="@+id/t7"
-    android:layout_width="100dp"
-    android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:text="table7"
-        android:textColor="#FFFFFF"
-        android:layout_alignBaseline="@+id/t4"
-        android:layout_alignBottom="@+id/t4"
-        android:layout_toStartOf="@+id/t5" />
-
-    <TextView
-        android:id="@+id/t4"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:text="table4"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="25dp"
-        android:layout_above="@+id/t2"
-        android:layout_alignStart="@+id/t5"
-        android:layout_marginStart="27dp" />
-
-    <TextView
-        android:id="@+id/t5"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:text="table5"
-        android:textColor="#FFFFFF"
-        android:layout_above="@+id/t2"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-    android:id="@+id/binf"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_toEndOf="@+id/t7" android:background="@drawable/button_shapes"
-    android:text="inf"
-    android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/blogin"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_shapes"
-        android:text="login"
-        android:textColor="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hello2" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/blogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shapes"
+            android:layout_marginTop="140dp"
+            android:text="login"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/brej"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shapes"
+            android:text="Zarejestruj"
+            android:textColor="#FFFFFF" />
+
+
+        <Button
+            android:id="@+id/binf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shapes"
+            android:text="informacje o klubie"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/bprices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shapes"
+            android:text="Cennik"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/brez"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shapes"
+            android:layout_marginTop="5dp"
+            android:text="Zarezerwuj stół"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</FrameLayout>
 

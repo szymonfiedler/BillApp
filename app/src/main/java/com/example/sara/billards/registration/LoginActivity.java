@@ -1,4 +1,4 @@
-package com.example.sara.billards;
+package com.example.sara.billards.registration;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,12 +13,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sara.billards.MainActivity;
+import com.example.sara.billards.R;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends Activity  {
     EditText mEdit, mEdit2;
     Button mButton;
+    public static int logged = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,7 @@ public class LoginActivity extends Activity  {
                                     Toast.LENGTH_LONG).show();
                         }
                         else{
-
+                            logged = 4;
                             AlertDialog.Builder builder;
 
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -50,11 +54,15 @@ public class LoginActivity extends Activity  {
                             } else {
                                 builder = new AlertDialog.Builder(LoginActivity.this);
                             }
+
                             builder.setTitle("Logowanie")
                                     .setMessage("Zalogowano pomyślnie")
                                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
 
+                                            Intent intent = new Intent(context, MainActivity.class);
+                                            startActivity(intent);
+                                            finish();
                                         }
                                     })
                                     .setIcon(android.R.drawable.ic_dialog_info)
