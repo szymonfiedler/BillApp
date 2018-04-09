@@ -73,6 +73,7 @@
                 android:layout_marginTop="5dip"
                 android:password="true"
                 android:singleLine="true" />
+
             <!-- Login button -->
             <Button
                 android:id="@+id/btnLogin"

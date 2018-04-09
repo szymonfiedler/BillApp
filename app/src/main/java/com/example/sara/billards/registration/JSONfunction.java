@@ -31,10 +31,10 @@ public class JSONfunction {
         return null;
     }
 
-    public static JSONObject getLoginObject2(String email, String password) {
+    public static JSONObject getLoginObject2(String username, String password) {
         try {
             JSONObject temp = new JSONObject();
-            temp.put("email", email);
+            temp.put("username", username);
             temp.put("password", password);
             Log.d(DEBUG_TAG, "json login object created");
             return temp;

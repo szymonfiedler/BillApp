@@ -7,11 +7,24 @@
     android:background="@drawable/backgroundsm"
     tools:context="com.example.sara.billards.HoursActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:text="Wybierz godzinę"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:textSize="60sp"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="1"
+        android:shadowRadius="2" />
+
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="80dp">
 
         <TableLayout
             android:layout_width="358dp"
@@ -53,7 +66,7 @@
                     android:id="@+id/bHour1"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="reserve"
+                    android:text="Zarezerwuj"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,7 +98,7 @@
                     android:id="@+id/bHour2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
 
             <TableRow
@@ -114,7 +127,7 @@
                     android:id="@+id/bHour3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
 
             </TableRow>
 
@@ -144,7 +157,7 @@
                     android:id="@+id/bHour4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
 
             </TableRow>
 
@@ -174,7 +187,7 @@
                     android:id="@+id/bHour5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
 
             <TableRow
@@ -203,7 +216,7 @@
                     android:id="@+id/bHour6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
 
             </TableRow>
 
@@ -233,7 +246,7 @@
                     android:id="@+id/bHour7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
 
             <TableRow
@@ -262,7 +275,7 @@
                     android:id="@+id/bHour8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
 
             </TableRow>
 
@@ -292,7 +305,7 @@
                     android:id="@+id/bHour9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
 
             <TableRow
@@ -320,7 +333,7 @@
                     android:id="@+id/bHour10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
 
             <TableRow
@@ -349,7 +362,7 @@
                     android:id="@+id/bHour11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
 
             </TableRow>
 
@@ -379,7 +392,7 @@
                     android:id="@+id/bHour12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="reserve" />
+                    android:text="Zarezerwuj" />
             </TableRow>
         </TableLayout>
 

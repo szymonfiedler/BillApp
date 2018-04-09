@@ -36,11 +36,10 @@ public class CalenderActivity extends AppCompatActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Toast.makeText(getBaseContext(), "selected date:" + year + "/" + month + "/" + dayOfMonth, Toast.LENGTH_LONG).show();
+
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, dayOfMonth);
                 date = DateUtils.formatDate(calendar.getTime());
-                Toast.makeText(getBaseContext(), "get date():" + date, Toast.LENGTH_LONG).show();
 
 
                 context = getApplicationContext();
