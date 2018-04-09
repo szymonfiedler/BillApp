@@ -37,41 +37,49 @@
         <!-- Footer Ends -->
 
         <!-- Login Form -->
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dip"
-            android:layout_below="@id/header">
-            <!--  Email Label -->
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#372c24"
-                android:text="Email"/>
-            <EditText android:id="@+id/email"
+            android:layout_height="618dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:padding="10dip">
+            <!--  Username Label -->
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
+                android:text="Nazwa użytkownika"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dip"
-                android:singleLine="true"/>
+                android:layout_marginTop="5dip"
+                android:singleLine="true" />
+
             <!--  Password Label -->
-            <TextView android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#372c24"
-                android:text="Password"/>
-            <EditText android:id="@+id/pass"
+                android:text="Hasło"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/pass"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
-                android:singleLine="true"
-                android:password="true"/>
+                android:password="true"
+                android:singleLine="true" />
             <!-- Login button -->
-            <Button android:id="@+id/btnLogin"
+            <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
-                android:text="Login"/>
+                android:text="Login" />
             <!-- Link to Registration Screen -->
             <TextView
                 android:id="@+id/link_to_register"
@@ -80,7 +88,7 @@
                 android:layout_marginBottom="40dip"
                 android:layout_marginTop="40dip"
                 android:gravity="center"
-                android:text="Registration"
+                android:text="Zarejestruj"
                 android:textAlignment="center"
                 android:textColor="#0b84aa"
                 android:textSize="30sp"

@@ -7,17 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.RequestQueue;
 import com.example.sara.billards.registration.LoginActivity;
 import com.example.sara.billards.registration.User_reg;
+import com.example.sara.billards.tables.DefaultTablesRepository;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.Iterator;
 
 
 public class MainActivity extends Activity {
     private static final String TAG = "MyActivity";
 
     Button binf, blogin, bregister, bprices, brez;
-
+    private RequestQueue mQueue;
     Context context;
-
+    static int size;
+    static String dane;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,22 +37,34 @@ public class MainActivity extends Activity {
         bprices = (Button) findViewById(R.id.bprices);
         brez = (Button) findViewById(R.id.brez);
 
-        View a = findViewById(R.id.brej);
+        final View[] a = {findViewById(R.id.brej)};
         View b = findViewById(R.id.brez);
         View c = findViewById(R.id.blogin);
 
+        // LoginActivity.logged=4; //TYLKO DO EKSPERYMENTÓW
         if (LoginActivity.logged == 0) {
-            a.setVisibility(View.VISIBLE);
+            a[0].setVisibility(View.VISIBLE);
             b.setVisibility(View.INVISIBLE);
             c.setVisibility(View.VISIBLE);
         }
         if (LoginActivity.logged > 0) {
-            a.setVisibility(View.GONE);
+            a[0].setVisibility(View.GONE);
             b.setVisibility(View.VISIBLE);
             c.setVisibility(View.GONE);
         }
+        JSONArray jsonArray = new JSONArray();
+        mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
+                .getRequestQueue();
+        String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/";
+        DefaultTablesRepository.createSingletonInstance(mQueue, url);
+        DefaultTablesRepository.getInstance().getTables(
+                Tables -> {
+                    size = Tables.size();
+                    dane = (Tables.toString());
 
-
+                },
+                error -> {
+                });
         binf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,11 +75,13 @@ public class MainActivity extends Activity {
         });
 
         brez.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
+
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, After_registration.class);
+                intent.putExtra("size", size);
                 startActivity(intent);
             }
         });

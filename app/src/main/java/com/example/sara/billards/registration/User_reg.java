@@ -38,16 +38,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class User_reg extends BaseActivity implements AsyncResponse {
-    private EditText Username, Email, Password;
-    Button bRegister;
-    private TextView tvTest;
 
-    private static final String AUTH_TOKEN_URL = "http://" + currentIp + ":8000/";
+
+    private static final String AUTH_TOKEN_URL = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/register/";
     private static final String SUCCESS_MESSAGE = "Successful result";
     private static final String FAILURES_MESSAGE = "Something went wrong";
     private static final String L_TAG = LoginActivity.class.getSimpleName();
 
-
+    private EditText Username, Email, Password, Name, Surname;
+    private TextView tvTest;
+    Button bRegister;
     private UserRegisterTask mAuthTask = null;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -56,9 +56,11 @@ public class User_reg extends BaseActivity implements AsyncResponse {
         setContentView(R.layout.activity_user_reg);
         Context context = getApplicationContext();
         TextView loginScreen = (TextView) findViewById(R.id.link_to_login);
-        Username = (EditText) findViewById(R.id.reg_fullname);
-        Email = (EditText) findViewById(R.id.reg_email);
-        Password = (EditText) findViewById(R.id.reg_password);
+        Username = (EditText) findViewById(R.id.username);
+        Email = (EditText) findViewById(R.id.email);
+        Password = (EditText) findViewById(R.id.password);
+        Name = (EditText) findViewById(R.id.name);
+        Surname = (EditText) findViewById(R.id.surname);
         bRegister = (Button) findViewById(R.id.btnRegister);
 
         Password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -110,8 +112,9 @@ public class User_reg extends BaseActivity implements AsyncResponse {
         // Store values at the time of the login attempt.
         String username = Username.getText().toString();
         String password = Password.getText().toString();
-
         String email = Email.getText().toString();
+        String name = Name.getText().toString();
+        String surname = Surname.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -134,6 +137,16 @@ public class User_reg extends BaseActivity implements AsyncResponse {
             focusView = Email;
             cancel = true;
         }
+        if (TextUtils.isEmpty(name)) {
+            Name.setError(getString(R.string.error_field_required));
+            focusView = Name;
+            cancel = true;
+        }
+        if (TextUtils.isEmpty(surname)) {
+            Surname.setError(getString(R.string.error_field_required));
+            focusView = Surname;
+            cancel = true;
+        }
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -142,7 +155,7 @@ public class User_reg extends BaseActivity implements AsyncResponse {
             //  and kick off a background task to
             // perform the user login attempt.
 
-            mAuthTask = new UserRegisterTask(email, username, password, this);
+            mAuthTask = new UserRegisterTask(username, email, password, name, surname, this);
             mAuthTask.execute((Void) null);
         }
     }
@@ -175,17 +188,21 @@ public class User_reg extends BaseActivity implements AsyncResponse {
      * the user.
      */
     public class UserRegisterTask extends AsyncTask<Void, Void, String> {
-        private final String sEmail;
         private final String sUserName;
+        private final String sEmail;
+        private final String sName;
+        private final String sSurname;
         private final String sPassWord;
         private Boolean success = false;
         public AsyncResponse delegate = null;
 
 
-        UserRegisterTask(String sEmail, String sUserName, String sPassword, AsyncResponse delegate) {
-            this.sEmail = sEmail;
+        UserRegisterTask(String sUserName, String sEmail, String sPassword, String sName, String sSurname, AsyncResponse delegate) {
             this.sUserName = sUserName;
+            this.sEmail = sEmail;
             this.sPassWord = sPassword;
+            this.sName = sName;
+            this.sSurname = sSurname;
             this.delegate = delegate;
         }
 
@@ -194,22 +211,24 @@ public class User_reg extends BaseActivity implements AsyncResponse {
         protected String doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
             try {
-                return getToken(this.sEmail, this.sUserName, this.sPassWord);
+                return getToken(this.sUserName, this.sEmail, this.sPassWord, this.sName, this.sSurname);
 
             } catch (Exception e) {
                 return "Caught some freaking exception";
             }
         }
 
-        protected String getToken(String email, String username, String password) {
+        protected String getToken(String username, String email, String password, String name, String surname) {
             JSONfunction parser = new JSONfunction();
-            JSONObject login = parser.getLoginObject(email, username, password);
+            JSONObject login = parser.getLoginObject(username, email, password, name, surname);
             String message = login.toString();
             InputStream is = null;
+
             // Only display the first 500 characters of the retrieved
             // web page content.
             int len = 500;
             try {
+
                 URL url = new URL(AUTH_TOKEN_URL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 Log.d(L_TAG, "url.openConnection");
@@ -252,26 +271,7 @@ public class User_reg extends BaseActivity implements AsyncResponse {
                 int serverResponseCode = conn.getResponseCode();
                 if (serverResponseCode == 201) {
                     this.success = true;
-                    android.app.AlertDialog.Builder builder;
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        builder = new android.app.AlertDialog.Builder(User_reg.this, android.R.style.Theme_Material_Dialog_Alert);
-                    } else {
-                        builder = new android.app.AlertDialog.Builder(User_reg.this);
-                    }
-
-                    builder.setTitle("Rejestracja")
-                            .setMessage("Zarejestrowano pomyślnie")
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    Intent intent = new Intent(User_reg.this, LoginActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            })
-                            .setIcon(android.R.drawable.ic_dialog_info)
-                            .show();
                 } else {
                     Log.d(L_TAG, serverResponseMessage + " " + serverResponseCode);
                 }

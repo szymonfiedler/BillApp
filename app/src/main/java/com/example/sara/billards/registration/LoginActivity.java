@@ -20,8 +20,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends Activity  {
-    EditText mEdit, mEdit2;
-    Button mButton;
+    EditText username, password;
+    Button bLogin;
     public static int logged = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,22 +30,16 @@ public class LoginActivity extends Activity  {
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
         Context context = getApplicationContext();
         TextView registerScreen = (TextView) findViewById(R.id.link_to_register);
-        mEdit   = (EditText)findViewById(R.id.email);
-        mEdit2   = (EditText)findViewById(R.id.pass);
-        mButton = (Button)findViewById(R.id.btnLogin);
-        mButton.setOnClickListener(
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.pass);
+        bLogin = (Button) findViewById(R.id.btnLogin);
+        bLogin.setOnClickListener(
                 new View.OnClickListener()
                 {
                     public void onClick(View view)
                     {
 
-                        String content = mEdit.getText().toString();
-                        boolean prawda= isEmailValid(content);
-                        if (!prawda) {
-                            Toast.makeText(context, "Email nieprawidłowy!",
-                                    Toast.LENGTH_LONG).show();
-                        }
-                        else{
+
                             logged = 4;
                             AlertDialog.Builder builder;
 
@@ -68,8 +62,8 @@ public class LoginActivity extends Activity  {
                                     .setIcon(android.R.drawable.ic_dialog_info)
                                     .show();
 
-                        }
-                        String content2=mEdit2.getText().toString();
+                        String Username = username.getText().toString();
+                        String Password = password.getText().toString();
                     }
                 });
 
@@ -81,12 +75,7 @@ public class LoginActivity extends Activity  {
             }
         });
     }
-    public static boolean isEmailValid(String email) {
-        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
-    }
+
 }
 
 

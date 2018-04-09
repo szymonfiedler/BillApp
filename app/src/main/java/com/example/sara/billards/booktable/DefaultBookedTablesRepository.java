@@ -117,6 +117,31 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
         requestQueue.add(jsonRequest);
     }
 
+    public void gettables(Consumer<Set<BookedTable>> bookedTablesResponseHandler,
+                          Response.ErrorListener errorListener) {
+        final MyJSONArrayRequest jsonRequest = new MyJSONArrayRequest(Request.Method
+                .GET, "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/",
+                new JSONArray(),
+                jsonArray -> {
+                    Log.i(TAG, "Got booked tables: " + jsonArray);
+                    Set<BookedTable> bookedTables = new HashSet<>();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject bookedTableAsJson = null;
+                        try {
+                            bookedTableAsJson = jsonArray.getJSONObject(i);
+                            BookedTable bookedTable = toBookedTable(bookedTableAsJson);
+                            bookedTables.add(bookedTable);
+                        } catch (JSONException e) {
+                            Log.i(TAG, "Could transform json to BookedTable: " + e.getMessage());
+                        }
+                    }
+                    bookedTablesResponseHandler.accept(bookedTables);
+                },
+                error -> Log.e(TAG, "Got error response: " + error));
+
+        Log.i(TAG, "Sending GET request to " + targetUrl);
+        requestQueue.add(jsonRequest);
+    }
     @Override
     public void getBookedTablesAtDate(String date,
                                       int tableId,

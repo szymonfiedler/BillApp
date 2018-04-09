@@ -35,7 +35,7 @@
         <activity android:name=".HoursActivity" />
         <activity android:name=".CalenderActivity" />
         <activity android:name=".EndActivity"></activity>
-
+        <activity android:name=".Map"></activity>
         <activity android:name=".After_registration"></activity>
         <activity android:name=".Prices"></activity>
     </application>

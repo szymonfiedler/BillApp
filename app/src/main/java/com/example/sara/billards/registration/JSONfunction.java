@@ -14,12 +14,15 @@ public class JSONfunction {
     private static final String ERROR_TAG = "E__JSONGfunctions";
     private static final String DEBUG_TAG = "D__JSONGfunctions";
 
-    public static JSONObject getLoginObject(String email, String username, String password) {
+    public static JSONObject getLoginObject(String username, String email, String password, String name, String surname) {
         try {
             JSONObject temp = new JSONObject();
-            temp.put("email", email);
+
             temp.put("username", username);
+            temp.put("email", email);
             temp.put("password", password);
+            temp.put("first_name", name);
+            temp.put("last_name", surname);
             Log.d(DEBUG_TAG, "json login object created");
             return temp;
         } catch (JSONException ex) {
