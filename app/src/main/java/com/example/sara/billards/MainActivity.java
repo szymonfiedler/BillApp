@@ -25,10 +25,10 @@ public class MainActivity extends Activity {
     private static final String TAG = "MyActivity";
 
     Button binf, blogin, bregister, bprices, brez;
-    private RequestQueue mQueue;
+    private RequestQueue mQueue, mQueue2;
     Context context;
-    static int size;
-    static String dane;
+    static int size,size2;
+    static String dane,dane2;
     @Override
     public void onBackPressed() {
         if (LoginActivity.logged > 0) {
@@ -71,8 +71,6 @@ public class MainActivity extends Activity {
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
 
-
-
         String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/";
         DefaultTablesRepository.createSingletonInstance(mQueue, url);
         DefaultTablesRepository.getInstance().getTables(
@@ -83,6 +81,9 @@ public class MainActivity extends Activity {
                 },
                 error -> {
                 });
+
+
+
         binf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +101,9 @@ public class MainActivity extends Activity {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, After_registration.class);
                 intent.putExtra("size", size);
+
                 startActivity(intent);
+
             }
         });
 
@@ -110,24 +113,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, PricesAct.class);
-try {
-    String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
-    DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl);
-    DefaultPricesRepository.getInstance().getPrices(AllPrices -> {
-                size = AllPrices.size();
-                dane = AllPrices.toString();
-            },
-            error -> {
-                Log.e(TAG, " error in PricesAct " + error);
-
-            });
-
-    startActivity(intent);
-}
-catch (Exception e)
-{
-    Log.e(TAG, " error in PricesAct " + e);
-}
+                connect();
+                startActivity(intent);
 
             }
         });
@@ -153,6 +140,31 @@ catch (Exception e)
 
 
     }
+    public void connect() {
+        try {
+
+            String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
+            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl);
+            DefaultPricesRepository.getInstance().getPrices(AllPrices -> {
+                        size2 = AllPrices.size();
+                        dane2 = AllPrices.toString();
+                    },
+                    error -> {
+                        Log.e(TAG, " error in PricesAct " + error);
+
+                    });
+
+
+        } catch (Exception e) {
+            Log.e(TAG, " error in PricesAct " + e);
+        }
+    }
+
+
+
+
+
+
 }
 //        for (int i=0;i<= t.length;i++){
 //            System.out.println("tablica" );

@@ -18,7 +18,7 @@ import java.util.Set;
 public class DefaultTablesRepository implements TablesRepository {
     public static int[] num_of_seats;
     public static String[] id_type;
-    private static final String TAG = "TablesRepository";
+    private static final String TAG = "DefaultTablesRepository";
     private static com.example.sara.billards.tables.DefaultTablesRepository singletonInstance;
     private final RequestQueue requestQueue;
     private final String targetUrl;
