@@ -15,5 +15,26 @@
         android:text="cennik"
         android:textColor="#FFFFFF"
         android:layout_above="@+id/t2"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteY="-6dp"
+        tools:layout_editor_absoluteX="127dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="128dp"
+        android:layout_height="99dp"
+        android:adjustViewBounds="true"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/t2"
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteY="116dp"
+        tools:layout_editor_absoluteX="108dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="54dp" />
 </android.support.constraint.ConstraintLayout>

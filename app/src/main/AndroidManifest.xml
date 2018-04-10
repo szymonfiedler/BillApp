@@ -16,9 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -39,10 +37,15 @@
         <activity android:name=".registration.User_reg" />
         <activity android:name=".HoursActivity" />
         <activity android:name=".CalenderActivity" />
-        <activity android:name=".EndActivity"></activity>
-        <activity android:name=".Map"></activity>
-        <activity android:name=".After_registration"></activity>
-        <activity android:name=".Prices"></activity>
+        <activity android:name=".EndActivity" />
+        <activity android:name=".Map" />
+        <activity android:name=".After_registration" />
+
+
+        <activity
+            android:name=".PricesAct"
+            android:label="@string/title_activity_prices"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

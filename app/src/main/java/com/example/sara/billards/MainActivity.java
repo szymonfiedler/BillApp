@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.RequestQueue;
+import com.example.sara.billards.Prices.AllPrices;
+import com.example.sara.billards.Prices.DefaultPricesRepository;
 import com.example.sara.billards.registration.LoginActivity;
 import com.example.sara.billards.registration.User_reg;
 import com.example.sara.billards.tables.DefaultTablesRepository;
@@ -67,6 +70,9 @@ public class MainActivity extends Activity {
         JSONArray jsonArray = new JSONArray();
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
+
+
+
         String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/";
         DefaultTablesRepository.createSingletonInstance(mQueue, url);
         DefaultTablesRepository.getInstance().getTables(
@@ -103,8 +109,26 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 context = getApplicationContext();
-                Intent intent = new Intent(context, Prices.class);
-                startActivity(intent);
+                Intent intent = new Intent(context, PricesAct.class);
+try {
+    String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
+    DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl);
+    DefaultPricesRepository.getInstance().getPrices(AllPrices -> {
+                size = AllPrices.size();
+                dane = AllPrices.toString();
+            },
+            error -> {
+                Log.e(TAG, " error in PricesAct " + error);
+
+            });
+
+    startActivity(intent);
+}
+catch (Exception e)
+{
+    Log.e(TAG, " error in PricesAct " + e);
+}
+
             }
         });
 
