@@ -8,10 +8,9 @@
     android:background="@drawable/backgroundsm">>
 
     <TableLayout
-        android:layout_width="358dp"
-        android:layout_height="484dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,6 +19,7 @@
         <TableRow
             android:layout_width="0dp"
             android:layout_height="495dp"
+            android:gravity="center"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
 
@@ -30,8 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_shapes"
-                android:text="POST"
+                android:text="Rezerwuj"
                 android:textColor="#FFFFFF"
+
                 app:layout_constraintHorizontal_bias="0.445"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -41,14 +42,14 @@
         <Space
             android:layout_width="wrap_content"
             android:layout_height="20dp" />
-        <TableRow>
 
+        <TableRow android:gravity="center">
             <Button
                 android:id="@+id/buttonGET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_shapes"
-                android:text="GET all date from base"
+                android:text="Pobierz wszystkie dane z bazy"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.448"
@@ -61,14 +62,13 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp" />
 
-        <TableRow>
-
+        <TableRow android:gravity="center">
             <Button
                 android:id="@+id/buttonShowMyChoice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_shapes"
-                android:text="show my choice"
+                android:text="Pokaż mój wybór"
                 android:textColor="#FFFFFF"
                 app:layout_constraintHorizontal_bias="0.45"
                 app:layout_constraintLeft_toLeftOf="parent"

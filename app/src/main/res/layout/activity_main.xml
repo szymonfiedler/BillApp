@@ -9,73 +9,90 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/hello2" />
+        android:src="@drawable/backgroundsm" />
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:orientation="vertical">
+    <ScrollView
+
+        android:clickable="true"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
 
-        <Button
-            android:id="@+id/blogin"
-            android:layout_width="wrap_content"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/button_shapes"
-            android:layout_marginTop="140dp"
-            android:text="login"
-            android:textColor="#FFFFFF" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/brej"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/button_shapes"
-            android:text="Zarejestruj"
-            android:textColor="#FFFFFF" />
+            <ImageView
+                android:id="@+id/wita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/witam" />
+
+            <Button
+                android:id="@+id/blogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shapes"
+                android:text="@string/login"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/brej"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_shapes"
+                android:text="@string/zarejestruj"
+                android:textColor="#FFFFFF" />
 
 
-        <Button
-            android:id="@+id/binf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/button_shapes"
-            android:text="informacje o klubie"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/bpanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shapes"
+                android:layout_marginTop="5dp"
+                android:text="Panel klienta"
+                android:textColor="#FFFFFF" />
 
-        <Button
-            android:id="@+id/bprices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/button_shapes"
-            android:text="Cennik"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/brez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shapes"
+                android:layout_marginTop="5dp"
+                android:text="@string/zarezerwuj_st"
+                android:textColor="#FFFFFF" />
 
-        <Button
-            android:id="@+id/brez"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/button_shapes"
-            android:layout_marginTop="5dp"
-            android:text="Zarezerwuj stół"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/binf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_shapes"
+                android:text="@string/informacje_o_klubie"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/bprices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_shapes"
+                android:text="@string/cennik"
+                android:textColor="#FFFFFF" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>
 

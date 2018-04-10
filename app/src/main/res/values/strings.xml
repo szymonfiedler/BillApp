@@ -15,4 +15,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="cennik">Cennik</string>
+    <string name="zarezerwuj_st">Zarezerwuj stół</string>
+    <string name="informacje_o_klubie">informacje o klubie</string>
+    <string name="zarejestruj">Zarejestruj</string>
+    <string name="login">login</string>
 </resources>

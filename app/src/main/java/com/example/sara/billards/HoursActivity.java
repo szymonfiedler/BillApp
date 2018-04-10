@@ -96,7 +96,7 @@ Context context;
             @Override
             public void onClick(View v) {
                 //takeHour();
-                bHour1.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -112,7 +112,7 @@ Context context;
         bHour2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour2.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -126,7 +126,7 @@ Context context;
         bHour3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour3.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -140,7 +140,7 @@ Context context;
         bHour4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour4.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -154,7 +154,7 @@ Context context;
         bHour5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour5.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -168,7 +168,7 @@ Context context;
         bHour6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour6.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -182,7 +182,7 @@ Context context;
         bHour7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour7.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -196,7 +196,7 @@ Context context;
         bHour8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour8.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -210,7 +210,7 @@ Context context;
         bHour9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour9.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -224,7 +224,7 @@ Context context;
         bHour10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour10.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -238,7 +238,7 @@ Context context;
         bHour11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour11.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
@@ -252,7 +252,7 @@ Context context;
         bHour12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bHour12.setBackgroundColor(Color.RED);
+
                 context = getApplicationContext();
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);

@@ -27,6 +27,13 @@ public class MainActivity extends Activity {
     static int size;
     static String dane;
     @Override
+    public void onBackPressed() {
+        if (LoginActivity.logged > 0) {
+            this.finishAffinity();
+        }
+
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -40,18 +47,23 @@ public class MainActivity extends Activity {
         final View[] a = {findViewById(R.id.brej)};
         View b = findViewById(R.id.brez);
         View c = findViewById(R.id.blogin);
-
+        View d = findViewById(R.id.bpanel);
         // LoginActivity.logged=4; //TYLKO DO EKSPERYMENTÓW
         if (LoginActivity.logged == 0) {
             a[0].setVisibility(View.VISIBLE);
-            b.setVisibility(View.INVISIBLE);
+            b.setVisibility(View.GONE);
             c.setVisibility(View.VISIBLE);
+            d.setVisibility(View.GONE);
         }
         if (LoginActivity.logged > 0) {
             a[0].setVisibility(View.GONE);
             b.setVisibility(View.VISIBLE);
             c.setVisibility(View.GONE);
+            d.setVisibility(View.VISIBLE);
+
+
         }
+
         JSONArray jsonArray = new JSONArray();
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
@@ -112,7 +124,6 @@ public class MainActivity extends Activity {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, LoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -67,6 +67,8 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,6 +100,8 @@
                     android:id="@+id/bHour2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:text="Zarezerwuj" />
             </TableRow>
 
@@ -127,6 +131,8 @@
                     android:id="@+id/bHour3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:text="Zarezerwuj" />
 
             </TableRow>
@@ -156,6 +162,8 @@
                 <Button
                     android:id="@+id/bHour4"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
 
@@ -186,6 +194,8 @@
                 <Button
                     android:id="@+id/bHour5"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
             </TableRow>
@@ -215,6 +225,8 @@
                 <Button
                     android:id="@+id/bHour6"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
 
@@ -245,6 +257,8 @@
                 <Button
                     android:id="@+id/bHour7"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
             </TableRow>
@@ -274,6 +288,8 @@
                 <Button
                     android:id="@+id/bHour8"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
 
@@ -305,6 +321,8 @@
                     android:id="@+id/bHour9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:text="Zarezerwuj" />
             </TableRow>
 
@@ -332,6 +350,8 @@
                 <Button
                     android:id="@+id/bHour10"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
             </TableRow>
@@ -361,6 +381,8 @@
                 <Button
                     android:id="@+id/bHour11"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
 
@@ -391,10 +413,12 @@
                 <Button
                     android:id="@+id/bHour12"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/button_shapes"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:text="Zarezerwuj" />
             </TableRow>
         </TableLayout>
 
     </ScrollView>
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>
