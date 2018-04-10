@@ -82,7 +82,23 @@ public class MainActivity extends Activity {
                 error -> {
                 });
 
+        try {
 
+            String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
+            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue2, PriceUrl); //teraz MQueue2 jest pusta ale w tym miejscu sie wywala
+            DefaultPricesRepository.getInstance().getPrices(AllPrices -> {               //gdyby dac jako argument mQueue to metoda GET dziala ale cala  apka sie wywali
+                        size2 = AllPrices.size();
+                        dane2 = AllPrices.toString();
+                    },
+                    error -> {
+                        Log.e(TAG, " connect with Price's server " + error);
+
+                    });
+
+
+        } catch (Exception e) {
+            Log.e(TAG, " error in PricesAct " + e);
+        }
 
         binf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +115,8 @@ public class MainActivity extends Activity {
 
 
                 context = getApplicationContext();
+
+
                 Intent intent = new Intent(context, After_registration.class);
                 intent.putExtra("size", size);
 
@@ -113,7 +131,6 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 context = getApplicationContext();
                 Intent intent = new Intent(context, PricesAct.class);
-                connect();
                 startActivity(intent);
 
             }
@@ -139,25 +156,6 @@ public class MainActivity extends Activity {
         });
 
 
-    }
-    public void connect() {
-        try {
-
-            String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
-            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl);
-            DefaultPricesRepository.getInstance().getPrices(AllPrices -> {
-                        size2 = AllPrices.size();
-                        dane2 = AllPrices.toString();
-                    },
-                    error -> {
-                        Log.e(TAG, " error in PricesAct " + error);
-
-                    });
-
-
-        } catch (Exception e) {
-            Log.e(TAG, " error in PricesAct " + e);
-        }
     }
 
 
