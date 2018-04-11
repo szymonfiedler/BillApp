@@ -80,6 +80,7 @@ public class DefaultBookedTablesRepository implements BookedTablesRepository {
         try {
             return new BookedTable(
                     response.getInt("ID_RES"),
+                    response.getInt("ID_USER"),
                     response.getInt("ID_TABLE"),
                     response.getString("DATE"),
                     response.getInt("HOUR_FROM"),

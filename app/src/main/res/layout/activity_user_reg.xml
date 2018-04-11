@@ -119,11 +119,6 @@
                 android:layout_marginTop="10dip"
                 android:text="Zarejestruj" />
             <!-- Link to Login Screen -->
-            <TextView
-                android:id="@+id/returned_token"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
 
             <TextView android:id="@+id/link_to_login"
                 android:layout_width="fill_parent"

@@ -1,9 +1,6 @@
 package com.example.sara.billards.registration;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,7 +16,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.sara.billards.MainActivity;
 import com.example.sara.billards.R;
@@ -34,18 +31,20 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class LoginActivity extends BaseActivity implements AsyncResponse {
+
     private static final String AUTH_TOKEN_URL = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/login/";
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
+    public static int user_id = 0;
     private UserLoginTask mAuthTask = null;
     private TextView tvTest;
     private static final String L_TAG = LoginActivity.class.getSimpleName();
     EditText username, password;
     Button bLogin;
-    public static int logged = 0;
+    public static String Username;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,7 +76,7 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
 
                     }
                 });
-        tvTest = (TextView) findViewById(R.id.returned_token);
+
         registerScreen.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -98,7 +97,7 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
         password.setError(null);
 
         // Store values at the time of the login attempt.
-        String Username = username.getText().toString();
+        Username = username.getText().toString();
         String Password = password.getText().toString();
 
         boolean cancel = false;
@@ -134,7 +133,6 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
     public void processFinish(String token) {
 
 
-        logged = 4;
         AlertDialog.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -268,6 +266,7 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
             reader = new InputStreamReader(stream, "UTF-8");
             char[] buffer = new char[len];
             reader.read(buffer);
+            user_id = Character.getNumericValue(buffer[11] + buffer[12]);
             return new String(buffer);
         }
 

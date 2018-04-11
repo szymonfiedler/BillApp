@@ -1,6 +1,9 @@
 package com.example.sara.billards;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,32 +14,37 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.sara.billards.R;
+
 import com.example.sara.billards.booktable.BookedTable;
 import com.example.sara.billards.booktable.Consumer;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 import com.example.sara.billards.booktable.TableOrder;
+import com.example.sara.billards.registration.LoginActivity;
 
 public class EndActivity extends AppCompatActivity {
     Button buttonPUT,buttonGET, buttonShowMyChoice;
-    TextView textView;
+    TextView textView, user, idtable, dat, hour1, hour2;
     private static final String TAG = "EndActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);
 
-        buttonGET=(Button)findViewById(R.id.buttonGET);
         buttonPUT=(Button)findViewById(R.id.buttonPUT);
-        buttonShowMyChoice=(Button)findViewById(R.id.buttonShowMyChoice);
-        textView=(TextView)findViewById(R.id.textView);
 
+
+        user = (TextView) findViewById(R.id.textView5);
+        idtable = (TextView) findViewById(R.id.textView7);
+        dat = (TextView) findViewById(R.id.textView9);
+        hour1 = (TextView) findViewById(R.id.textView11);
+        hour2 = (TextView) findViewById(R.id.textView13);
         Intent intent =getIntent(); //intent from HoursActivity
         String date= intent.getStringExtra("DATE");
 
         int tableId= intent.getIntExtra("tableId",1);
-
+        int userId = LoginActivity.user_id;
         String startHour= intent.getStringExtra("startHour");
+
         String endHour= intent.getStringExtra("endHour");
 
         Log.e(TAG, "tableId  " + tableId);
@@ -46,24 +54,11 @@ public class EndActivity extends AppCompatActivity {
         Log.e(TAG, "endHour " +endHour);
 
 
-        buttonGET.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DefaultBookedTablesRepository.getInstance().getBookedTables(
-                        bookedTables -> {
-                            Toast.makeText(getApplicationContext(), "all date from base ", Toast.LENGTH_SHORT).show();
-                            textView.setText(bookedTables.toString());
-                        },
-                        error -> {
-                        });
-            }
-        });
-        buttonShowMyChoice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText("tableId: "+tableId+" ,date: "+date+" hourFrom: "+startHour+" ,hourTo: "+endHour);
-            }
-        });
+        user.setText(" " + LoginActivity.user_id);
+        idtable.setText(" " + tableId);
+        dat.setText(" " + date);
+        hour1.setText(" " + startHour);
+        hour2.setText(" " + endHour);
 
         buttonPUT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +67,7 @@ public class EndActivity extends AppCompatActivity {
                 DefaultBookedTablesRepository.getInstance().bookTable(
                         TableOrder.builder()
                                 .withTableId(tableId)
-                                .withUserId(1)
+                                .withUserId(userId)
                                 .withPrice(15d)
                                 .withStartHour(startHour)
                                 .withEndHour(endHour)
@@ -81,7 +76,26 @@ public class EndActivity extends AppCompatActivity {
                         new Consumer<BookedTable>() {
                             @Override
                             public void accept(BookedTable bookedResponse) {
-                                Log.e(TAG, " Got Response " + bookedResponse);
+                                AlertDialog.Builder builder;
+
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                    builder = new AlertDialog.Builder(EndActivity.this, android.R.style.Theme_Material_Dialog_Alert);
+                                } else {
+                                    builder = new AlertDialog.Builder(EndActivity.this);
+                                }
+
+                                builder.setTitle("Zarezerwowano")
+                                        .setMessage("Zarezerwowano pomyślnie!")
+                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+
+                                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        })
+                                        .setIcon(android.R.drawable.ic_dialog_info)
+                                        .show();
                             }
                         }, new Response.ErrorListener() {
                             @Override

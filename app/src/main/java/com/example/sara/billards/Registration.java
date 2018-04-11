@@ -18,12 +18,11 @@ public class Registration extends Activity {
     private TextView mTextView;
     private Button buttonGET, button_hours,buttonPOST;
     private RequestQueue mQueue;
-    private JSONArray latestRequestArray;
-    CalenderActivity calenderActivity;
+
     Context context;
     public static final String TAG = "RegistrationActivity";
     public static final String REQUEST_TAG = "Activity";
-    public static final String REQUEST_TAG2 = "Activty **POST**";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

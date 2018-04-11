@@ -9,16 +9,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.RequestQueue;
-import com.example.sara.billards.Prices.AllPrices;
+
 import com.example.sara.billards.Prices.DefaultPricesRepository;
 import com.example.sara.billards.registration.LoginActivity;
 import com.example.sara.billards.registration.User_reg;
 import com.example.sara.billards.tables.DefaultTablesRepository;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.util.Iterator;
 
 
 public class MainActivity extends Activity {
@@ -31,9 +28,9 @@ public class MainActivity extends Activity {
     static String dane,dane2;
     @Override
     public void onBackPressed() {
-        if (LoginActivity.logged > 0) {
+
             this.finishAffinity();
-        }
+
 
     }
 
@@ -52,13 +49,13 @@ public class MainActivity extends Activity {
         View c = findViewById(R.id.blogin);
         View d = findViewById(R.id.bpanel);
         // LoginActivity.logged=4; //TYLKO DO EKSPERYMENTÓW
-        if (LoginActivity.logged == 0) {
+        if (LoginActivity.user_id == 0) {
             a[0].setVisibility(View.VISIBLE);
             b.setVisibility(View.GONE);
             c.setVisibility(View.VISIBLE);
             d.setVisibility(View.GONE);
         }
-        if (LoginActivity.logged > 0) {
+        if (LoginActivity.user_id > 0) {
             a[0].setVisibility(View.GONE);
             b.setVisibility(View.VISIBLE);
             c.setVisibility(View.GONE);
@@ -67,7 +64,7 @@ public class MainActivity extends Activity {
 
         }
 
-        JSONArray jsonArray = new JSONArray();
+
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
 

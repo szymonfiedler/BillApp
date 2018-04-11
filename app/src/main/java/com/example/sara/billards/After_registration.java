@@ -8,16 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.android.volley.RequestQueue;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 import com.example.sara.billards.tables.DefaultTablesRepository;
 
-import java.util.ArrayList;
 
 public class After_registration extends Activity {
 

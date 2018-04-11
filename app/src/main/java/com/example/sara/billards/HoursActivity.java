@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class HoursActivity extends AppCompatActivity {
-TextView tvHour11, tvHour12,tvHour12b,tvHour13,tvHour13b,tvHour14,tvHour14b,tvHour15,tvHour15b,tvHour16,tvHour16b,tvHour17,tvHour17b,tvHour18,tvHour18b,tvHour19,tvHour19b,tvHour20,tvHour20b,tvHour21,tvHour21b,tvHour22,tvHour22b,tvHour23;
+    TextView tvHour11, tvHour12, tvHour13, tvHour14, tvHour15, tvHour16, tvHour17, tvHour18, tvHour19, tvHour20, tvHour21, tvHour22, tvHour23;
     Button bHour1,bHour2,bHour3,bHour4,bHour5,bHour6,bHour7,bHour8,bHour9,bHour10,bHour11,bHour12;
     private static final String TAG = "HoursActivity";
     private List<Button> allButtons;
@@ -31,28 +31,17 @@ Context context;
 
         tvHour11 = (TextView) findViewById(R.id.tvHour11);
         tvHour12 = (TextView) findViewById(R.id.tvHour12);
-        tvHour12b = (TextView) findViewById(R.id.tvHour12b);
         tvHour13 = (TextView) findViewById(R.id.tvHour13);
-        tvHour13b = (TextView) findViewById(R.id.tvHour13b);
         tvHour14 = (TextView) findViewById(R.id.tvHour14);
-        tvHour14b = (TextView) findViewById(R.id.tvHour14b);
         tvHour15 = (TextView) findViewById(R.id.tvHour15);
-        tvHour15b = (TextView) findViewById(R.id.tvHour15b);
         tvHour16 = (TextView) findViewById(R.id.tvHour16);
-        tvHour16b = (TextView) findViewById(R.id.tvHour16b);
         tvHour17 = (TextView) findViewById(R.id.tvHour17);
-        tvHour17b = (TextView) findViewById(R.id.tvHour17b);
         tvHour18 = (TextView) findViewById(R.id.tvHour18);
-        tvHour18b = (TextView) findViewById(R.id.tvHour18b);
         tvHour19 = (TextView) findViewById(R.id.tvHour19);
-        tvHour19b = (TextView) findViewById(R.id.tvHour19b);
         tvHour20 = (TextView) findViewById(R.id.tvHour20);
-        tvHour20b = (TextView) findViewById(R.id.tvHour20b);
         tvHour21 = (TextView) findViewById(R.id.tvHour21);
-        tvHour21b = (TextView) findViewById(R.id.tvHour21b);
         tvHour22 = (TextView) findViewById(R.id.tvHour22);
-        tvHour22b = (TextView) findViewById(R.id.tvHour22b);
-        tvHour23 = (TextView) findViewById(R.id.tvHour23);
+
 
         bHour1= (Button) findViewById(R.id.bHour1);
         bHour2= (Button) findViewById(R.id.bHour2);
@@ -101,8 +90,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour11.getText().toString());
-                intent.putExtra("endHour",tvHour12.getText().toString());
+                intent.putExtra("startHour", tvHour11.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour11.getText().toString().substring(7, 13));
                 // intent.putExtra("Start_Hour", bookedTable.getStartHour());
                 startActivity(intent);
 
@@ -117,8 +106,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour12b.getText().toString());
-                intent.putExtra("endHour",tvHour13.getText().toString());
+                intent.putExtra("startHour", tvHour12.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour12.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -131,8 +120,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour13b.getText().toString());
-                intent.putExtra("endHour",tvHour14.getText().toString());
+                intent.putExtra("startHour", tvHour13.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour13.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -145,8 +134,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour14b.getText().toString());
-                intent.putExtra("endHour",tvHour15.getText().toString());
+                intent.putExtra("startHour", tvHour14.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour14.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -159,8 +148,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour15b.getText().toString());
-                intent.putExtra("endHour",tvHour16.getText().toString());
+                intent.putExtra("startHour", tvHour15.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour15.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -173,8 +162,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour16b.getText().toString());
-                intent.putExtra("endHour",tvHour17.getText().toString());
+                intent.putExtra("startHour", tvHour16.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour16.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -187,8 +176,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour17b.getText().toString());
-                intent.putExtra("endHour",tvHour18.getText().toString());
+                intent.putExtra("startHour", tvHour17.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour17.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -201,8 +190,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour18b.getText().toString());
-                intent.putExtra("endHour",tvHour19.getText().toString());
+                intent.putExtra("startHour", tvHour18.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour18.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -215,8 +204,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour19b.getText().toString());
-                intent.putExtra("endHour",tvHour20.getText().toString());
+                intent.putExtra("startHour", tvHour19.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour19.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -229,8 +218,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour20b.getText().toString());
-                intent.putExtra("endHour",tvHour21.getText().toString());
+                intent.putExtra("startHour", tvHour20.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour20.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -243,8 +232,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour21b.getText().toString());
-                intent.putExtra("endHour",tvHour22.getText().toString());
+                intent.putExtra("startHour", tvHour21.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour21.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -257,8 +246,8 @@ Context context;
                 Intent intent = new Intent(context, EndActivity.class);
                 intent.putExtra("tableId",tableId);
                 intent.putExtra("DATE",date);
-                intent.putExtra("startHour",tvHour22b.getText().toString());
-                intent.putExtra("endHour",tvHour23.getText().toString());
+                intent.putExtra("startHour", tvHour22.getText().toString().substring(0, 5));
+                intent.putExtra("endHour", tvHour22.getText().toString().substring(7, 13));
 
                 startActivity(intent);
             }
@@ -286,6 +275,8 @@ Context context;
                         for (int i = startHour; i < endHour; i++) {
                             int indexOfButtonToBeDisabled = currentHour - 11;
                             allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);//wygasniecie przycisku buttonu jesli godzina jest zarezerowwana w bazie danych
+                            allButtons.get(indexOfButtonToBeDisabled).setText("Zajęty");
+                            allButtons.get(indexOfButtonToBeDisabled).setBackgroundResource(R.drawable.button_shape_off);
                             currentHour++;
                         }
 

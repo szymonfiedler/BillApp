@@ -1,15 +1,14 @@
 package com.example.sara.billards.registration;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+
 import android.annotation.TargetApi;
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v7.app.AlertDialog;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,7 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sara.billards.MainActivity;
+
 import com.example.sara.billards.R;
 
 import org.json.JSONObject;
@@ -96,7 +95,7 @@ public class User_reg extends BaseActivity implements AsyncResponse {
             }
         });
 
-        tvTest = (TextView) findViewById(R.id.returned_token);
+
     }
 
     private void startRegister() {
@@ -163,9 +162,27 @@ public class User_reg extends BaseActivity implements AsyncResponse {
     @Override
     public void processFinish(String response) {
         if (response == SUCCESS_MESSAGE) {
+            android.app.AlertDialog.Builder builder;
 
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new android.app.AlertDialog.Builder(User_reg.this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new android.app.AlertDialog.Builder(User_reg.this);
+            }
+
+            builder.setTitle("Rejestracja")
+                    .setMessage("Zarejestrowano poprawnie")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .show();
+
 
         } else {
             tvTest.setText(FAILURES_MESSAGE);
@@ -173,8 +190,8 @@ public class User_reg extends BaseActivity implements AsyncResponse {
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
+
+        return password.length() > 8;
     }
 
     /**
@@ -209,7 +226,7 @@ public class User_reg extends BaseActivity implements AsyncResponse {
 
         @Override
         protected String doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
+
             try {
                 return getToken(this.sUserName, this.sEmail, this.sPassWord, this.sName, this.sSurname);
 
@@ -220,7 +237,7 @@ public class User_reg extends BaseActivity implements AsyncResponse {
 
         protected String getToken(String username, String email, String password, String name, String surname) {
             JSONfunction parser = new JSONfunction();
-            JSONObject login = parser.getLoginObject(username, email, password, name, surname);
+            JSONObject login = JSONfunction.getLoginObject(username, email, password, name, surname);
             String message = login.toString();
             InputStream is = null;
 
