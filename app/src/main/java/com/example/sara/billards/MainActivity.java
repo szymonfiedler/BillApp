@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.RequestQueue;
-
-import com.example.sara.billards.Prices.DefaultPricesRepository;
 import com.example.sara.billards.registration.LoginActivity;
 import com.example.sara.billards.registration.User_reg;
 import com.example.sara.billards.tables.DefaultTablesRepository;
@@ -80,23 +77,6 @@ public class MainActivity extends Activity {
                 error -> {
                 });
 
-//        try {
-//
-//            String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
-//            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl); //teraz MQueue2 jest pusta ale w tym miejscu sie wywala
-//            DefaultPricesRepository.getInstance().getPrices(AllPrices -> {               //gdyby dac jako argument mQueue to metoda GET dziala ale cala  apka sie wywali
-//                        size2 = AllPrices.size();
-//                        dane2 = AllPrices.toString();
-//                    },
-//                    error -> {
-//                        Log.e(TAG, " connect with Price's server " + error);
-//
-//                    });
-//
-//
-//        } catch (Exception e) {
-//            Log.e(TAG, " error in PricesAct " + e);
-//        }
 
         binf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,10 +135,6 @@ public class MainActivity extends Activity {
 
 
     }
-
-
-
-
 
 
 }

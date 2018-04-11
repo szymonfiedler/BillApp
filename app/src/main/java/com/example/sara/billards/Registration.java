@@ -10,10 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
-import com.example.sara.billards.Prices.DefaultPricesRepository;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
-
-import org.json.JSONArray;
 
 public class Registration extends Activity {
     private TextView mTextView;
@@ -45,8 +42,7 @@ public class Registration extends Activity {
         String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api2/";
         DefaultBookedTablesRepository.createSingletonInstance(mQueue, url);
 
-        String PricesUrl="http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
-        DefaultPricesRepository.createSingletonInstanceForPrices(mQueue,PricesUrl);
+
         buttonGET.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
