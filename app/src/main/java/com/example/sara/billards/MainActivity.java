@@ -68,6 +68,7 @@ public class MainActivity extends Activity {
         mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
                 .getRequestQueue();
 
+
         String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/";
         DefaultTablesRepository.createSingletonInstance(mQueue, url);
         DefaultTablesRepository.getInstance().getTables(
@@ -82,7 +83,7 @@ public class MainActivity extends Activity {
         try {
 
             String PriceUrl = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api3/";
-            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue2, PriceUrl); //teraz MQueue2 jest pusta ale w tym miejscu sie wywala
+            DefaultPricesRepository.createSingletonInstanceForPrices(mQueue, PriceUrl); //teraz MQueue2 jest pusta ale w tym miejscu sie wywala
             DefaultPricesRepository.getInstance().getPrices(AllPrices -> {               //gdyby dac jako argument mQueue to metoda GET dziala ale cala  apka sie wywali
                         size2 = AllPrices.size();
                         dane2 = AllPrices.toString();

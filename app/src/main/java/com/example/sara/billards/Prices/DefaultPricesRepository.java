@@ -38,7 +38,7 @@ public class DefaultPricesRepository implements PricesRepository{
     }
     public static DefaultPricesRepository getInstance() {
         if (singletonInstanceForPrices == null) {
-            throw new RuntimeException("Instance of DefaultBookedTablesRepository is not ready.");
+            throw new RuntimeException("Instance of DefaultPricesRepository is not ready.");
         }
         return singletonInstanceForPrices;
     }

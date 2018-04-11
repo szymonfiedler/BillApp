@@ -1,5 +1,6 @@
 package com.example.sara.billards;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +11,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
 import com.example.sara.billards.Prices.DefaultPricesRepository;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
 
 public class PricesAct extends AppCompatActivity {
     public static final String TAG = "PricesActivity";
     TextView textView, tvinf;
     Button button;
+    private RequestQueue mQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,8 @@ public class PricesAct extends AppCompatActivity {
         tvinf=(TextView) findViewById(R.id.tvinf);
         textView=(TextView) findViewById(R.id.textView);
         button=(Button) findViewById(R.id.button);
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,29 +43,9 @@ public class PricesAct extends AppCompatActivity {
                             Log.e(TAG, " error in PricesAct " + error);
                         });
             }
-            }
-        );
+        });
 
 
+}
 
-//        DefaultBookedTablesRepository.getInstance().getBookedTables(
-//                bookedTables -> {
-//                    Toast.makeText(getApplicationContext(), "all date from base ", Toast.LENGTH_SHORT).show();
-//                    textView.setText(bookedTables.toString());
-//                },
-//                error -> {
-//                });
-//
-//
-//
-//        DefaultPricesRepository.getInstance().getPrices(
-//                bookedTables -> {
-//                    Toast.makeText(getApplicationContext(), "all date from base ", Toast.LENGTH_SHORT).show();
-//                    textView.setText(bookedTables.toString());
-//                },
-//                error -> {
-//                });
-//
-//    }
-
-}}
+}
