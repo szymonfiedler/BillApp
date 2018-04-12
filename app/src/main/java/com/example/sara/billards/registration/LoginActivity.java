@@ -40,7 +40,7 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
 
     public static int user_id = 0;
     private UserLoginTask mAuthTask = null;
-    private TextView tvTest;
+
     private static final String L_TAG = LoginActivity.class.getSimpleName();
     EditText username, password;
     Button bLogin;
@@ -196,7 +196,7 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
 
         protected String getToken(String username, String password) {
             JSONfunction parser = new JSONfunction();
-            JSONObject login = parser.getLoginObject2(username, password);
+            JSONObject login = JSONfunction.getLoginObject2(username, password);
             String message = login.toString();
             InputStream is = null;
             // Only display the first 500 characters of the retrieved

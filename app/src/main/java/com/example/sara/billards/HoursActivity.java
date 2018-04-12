@@ -2,7 +2,7 @@ package com.example.sara.billards;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +13,9 @@ import android.widget.TextView;
 import com.example.sara.billards.booktable.BookedTable;
 import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,13 +24,14 @@ public class HoursActivity extends AppCompatActivity {
     Button bHour1,bHour2,bHour3,bHour4,bHour5,bHour6,bHour7,bHour8,bHour9,bHour10,bHour11,bHour12;
     private static final String TAG = "HoursActivity";
     private List<Button> allButtons;
+    private List<TextView> allTextView;
 Context context;
     BookedTable bookedTable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hours);
-
+        allTextView = new ArrayList<>();
         tvHour11 = (TextView) findViewById(R.id.tvHour11);
         tvHour12 = (TextView) findViewById(R.id.tvHour12);
         tvHour13 = (TextView) findViewById(R.id.tvHour13);
@@ -41,7 +44,18 @@ Context context;
         tvHour20 = (TextView) findViewById(R.id.tvHour20);
         tvHour21 = (TextView) findViewById(R.id.tvHour21);
         tvHour22 = (TextView) findViewById(R.id.tvHour22);
-
+        allTextView.add(tvHour11);
+        allTextView.add(tvHour12);
+        allTextView.add(tvHour13);
+        allTextView.add(tvHour14);
+        allTextView.add(tvHour15);
+        allTextView.add(tvHour16);
+        allTextView.add(tvHour17);
+        allTextView.add(tvHour18);
+        allTextView.add(tvHour19);
+        allTextView.add(tvHour20);
+        allTextView.add(tvHour21);
+        allTextView.add(tvHour22);
 
         bHour1= (Button) findViewById(R.id.bHour1);
         bHour2= (Button) findViewById(R.id.bHour2);
@@ -252,7 +266,31 @@ Context context;
                 startActivity(intent);
             }
         });
+        Calendar cal, today;
+        cal = Calendar.getInstance();
+        today = Calendar.getInstance();
 
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+
+        today.set(Calendar.HOUR_OF_DAY, 0);
+
+
+        String Today, now;
+        Today = today.toString();
+        Today = DateUtils.formatDate(today.getTime());
+        now = sdf.format(cal.getTime());
+        if (date.equals(Today)) {
+
+            int Now = Integer.parseInt(now.substring(0, 2));
+
+            if (Now > 11) {
+                int bt = Now - 10;
+                for (int i = 0; i < bt; i++) {
+                    allButtons.get(i).setVisibility(View.GONE);
+                    allTextView.get(i).setVisibility(View.GONE);
+                }
+            }
+        }
         DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
                 date,
                 tableId,

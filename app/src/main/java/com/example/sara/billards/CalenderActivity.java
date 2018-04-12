@@ -10,7 +10,7 @@ import android.widget.CalendarView;
 import android.widget.Toast;
 
 
-import java.sql.Date;
+
 import java.util.Calendar;
 
 public class CalenderActivity extends AppCompatActivity {
@@ -18,7 +18,7 @@ public class CalenderActivity extends AppCompatActivity {
     Context context;
     String date;
 
-    private static final String TAG = "CalenderActivity";
+    // private static final String TAG = "CalenderActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class CalenderActivity extends AppCompatActivity {
         calendar = (CalendarView) findViewById(R.id.calendar);
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
+
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 Calendar today = Calendar.getInstance();
                 today.set(Calendar.HOUR_OF_DAY, 0);

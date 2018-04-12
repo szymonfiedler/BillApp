@@ -41,19 +41,19 @@ public class MainActivity extends Activity {
         bprices = (Button) findViewById(R.id.bprices);
         brez = (Button) findViewById(R.id.brez);
 
-        final View[] a = {findViewById(R.id.brej)};
+        View a = findViewById(R.id.brej);
         View b = findViewById(R.id.brez);
         View c = findViewById(R.id.blogin);
         View d = findViewById(R.id.bpanel);
         // LoginActivity.logged=4; //TYLKO DO EKSPERYMENTÓW
         if (LoginActivity.user_id == 0) {
-            a[0].setVisibility(View.VISIBLE);
+            a.setVisibility(View.VISIBLE);
             b.setVisibility(View.GONE);
             c.setVisibility(View.VISIBLE);
             d.setVisibility(View.GONE);
         }
         if (LoginActivity.user_id > 0) {
-            a[0].setVisibility(View.GONE);
+            a.setVisibility(View.GONE);
             b.setVisibility(View.VISIBLE);
             c.setVisibility(View.GONE);
             d.setVisibility(View.VISIBLE);

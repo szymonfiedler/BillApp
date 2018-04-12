@@ -18,7 +18,7 @@ import com.example.sara.billards.tables.DefaultTablesRepository;
 public class After_registration extends Activity {
 
 
-    private static final String TAG = "After_registration";
+    // private static final String TAG = "After_registration";
     private RequestQueue mQueue;
 
 

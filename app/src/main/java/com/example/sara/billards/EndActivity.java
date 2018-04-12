@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -54,10 +54,10 @@ public class EndActivity extends AppCompatActivity {
         Log.e(TAG, "endHour " +endHour);
 
 
-        user.setText(" " + LoginActivity.user_id);
+        user.setText(" " + LoginActivity.Username);
         idtable.setText(" " + tableId);
         dat.setText(" " + date);
-        hour1.setText(" " + startHour);
+        hour1.setText(" " + startHour + " ");
         hour2.setText(" " + endHour);
 
         buttonPUT.setOnClickListener(new View.OnClickListener() {
