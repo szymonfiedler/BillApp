@@ -6,17 +6,24 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 
+import com.example.sara.billards.booktable.BookedTable;
+import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 public class CalenderActivity extends AppCompatActivity {
     CalendarView calendar;
     Context context;
     String date;
+    private static final String TAG = "CalenderActivity";
 
     // private static final String TAG = "CalenderActivity";
 
@@ -46,12 +53,16 @@ public class CalenderActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, HoursActivity.class);
                     intent.putExtra("DATE", date); // wyslanie date w intent do klasy HoursActivity
 
+
                     Intent intent2 = getIntent(); //pobranie intentu RegistrationAct
                     int tableId = intent2.getIntExtra("tableId", 1); // odebranie TableId
 
+
                     intent.putExtra("tableId", tableId); // wyslanie tableId dalej->do HoursActivity
                     startActivity(intent);
+
                 }
+
             }
         });
     }

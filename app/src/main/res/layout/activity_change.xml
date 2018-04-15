@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
+
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:background="#ffffff">
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
 
         <!--  Header  Starts-->
-        <LinearLayout android:id="@+id/header"
+        <LinearLayout
+            android:id="@+id/header"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
 
@@ -59,11 +61,11 @@
                 android:layout_marginTop="5dip"
                 android:singleLine="true" />
 
-            <!--  Password Label -->
+            <!--  PasswordOld Label -->
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Hasło"
+                android:text="Stare hasło"
                 android:textColor="#372c24" />
 
             <EditText
@@ -72,40 +74,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
                 android:password="true"
+                android:layout_marginBottom="20dip"
                 android:singleLine="true" />
+            <!--  PasswordNew Label -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Nowe hasło"
+                android:textColor="#372c24" />
 
+            <EditText
+                android:id="@+id/passnew"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:password="true"
+                android:singleLine="true" />
             <!-- Login button -->
             <Button
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnchange"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
-                android:text="Login" />
-            <!-- Link to Registration Screen -->
-            <TextView
-                android:id="@+id/link_to_register"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dip"
-                android:layout_marginTop="40dip"
-                android:gravity="center"
-                android:text="Zarejestruj"
-                android:textAlignment="center"
-                android:textColor="#0b84aa"
-                android:textSize="30sp"
-                android:textStyle="italic" />
-            <!-- Link to Change Password Screen Screen -->
-            <TextView
-                android:id="@+id/link_to_change_password"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Zmień hasło"
-                android:layout_marginTop="-30dip"
-                android:textAlignment="center"
-                android:textColor="#0b84aa"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:text="Zmień hasło" />
+
+
         </LinearLayout>
         <!-- Login Form Ends -->
     </RelativeLayout>

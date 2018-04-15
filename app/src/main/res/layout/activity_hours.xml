@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_gravity="end|center"
-
+                    android:enabled="false"
                     android:background="@drawable/button_shapes"
                     android:layout_toEndOf="@+id/tvHour11"
                     android:text="Zarezerwuj"
@@ -71,6 +71,7 @@
                 android:id="@+id/tvHour12"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
+
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/tvHour11"
                 android:layout_centerHorizontal="true"
@@ -93,6 +94,7 @@
                     android:layout_toEndOf="@+id/tvHour12"
                     android:layout_below="@+id/tvHour11"
                     android:layout_marginTop="10dp"
+                    android:enabled="false"
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF" />
@@ -121,6 +123,7 @@
                     android:layout_toEndOf="@+id/tvHour13"
                     android:layout_below="@+id/tvHour12"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
@@ -153,6 +156,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
+                    android:enabled="false"
                     android:textColor="#FFFFFF" />
 
 
@@ -182,6 +186,7 @@
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
+                    android:enabled="false"
                     android:layout_marginTop="10dp" />
 
                 <TextView
@@ -207,6 +212,7 @@
                     android:background="@drawable/button_shapes"
                 android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
+                android:enabled="false"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@+id/tvHour16"
                 android:layout_below="@+id/tvHour15"
@@ -235,6 +241,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
+                    android:enabled="false"
                     android:textColor="#FFFFFF"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@+id/tvHour17"
@@ -266,6 +273,7 @@
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
                     android:layout_alignParentEnd="true"
+                    android:enabled="false"
                     android:layout_toEndOf="@+id/tvHour18"
                     android:layout_below="@+id/tvHour17"
                     android:layout_marginTop="10dp" />
@@ -295,6 +303,7 @@
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
                     android:layout_alignParentEnd="true"
+                    android:enabled="false"
                     android:layout_toEndOf="@+id/tvHour19"
                     android:layout_below="@+id/tvHour18"
                     android:layout_marginTop="10dp" />
@@ -325,6 +334,7 @@
                     android:textColor="#FFFFFF"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@+id/tvHour20"
+                    android:enabled="false"
                     android:layout_below="@+id/tvHour19"
                     android:layout_marginTop="10dp" />
 
@@ -349,6 +359,7 @@
                     android:id="@+id/bHour11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
@@ -382,6 +393,7 @@
                     android:background="@drawable/button_shapes"
                     android:text="Zarezerwuj"
                     android:textColor="#FFFFFF"
+                    android:enabled="false"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@+id/tvHour22"
                     android:layout_below="@+id/tvHour21"

@@ -15,7 +15,7 @@ import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 public class Registration extends Activity {
     private TextView mTextView;
     private Button buttonGET, button_hours,buttonPOST;
-    private RequestQueue mQueue,mQueue2;
+    private RequestQueue mQueue;
 
     Context context;
     public static final String TAG = "RegistrationActivity";

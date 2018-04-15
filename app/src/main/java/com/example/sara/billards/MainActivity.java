@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.RequestQueue;
+import com.example.sara.billards.User_Control_Center.usr_ctr_cnt;
 import com.example.sara.billards.registration.LoginActivity;
 import com.example.sara.billards.registration.User_reg;
 import com.example.sara.billards.tables.DefaultTablesRepository;
@@ -16,13 +17,13 @@ import com.example.sara.billards.tables.DefaultTablesRepository;
 
 
 public class MainActivity extends Activity {
-    private static final String TAG = "MyActivity";
+    //private static final String TAG = "MyActivity";
 
-    Button binf, blogin, bregister, bprices, brez;
-    private RequestQueue mQueue, mQueue2;
+    Button binf, blogin, bregister, bprices, brez, bpanel;
+    private RequestQueue mQueue;
     Context context;
-    static int size,size2;
-    static String dane,dane2;
+    static int size;
+    static String dane;
     @Override
     public void onBackPressed() {
 
@@ -40,12 +41,12 @@ public class MainActivity extends Activity {
         bregister = (Button) findViewById(R.id.brej);
         bprices = (Button) findViewById(R.id.bprices);
         brez = (Button) findViewById(R.id.brez);
-
+        bpanel = (Button) findViewById(R.id.bpanel);
         View a = findViewById(R.id.brej);
         View b = findViewById(R.id.brez);
         View c = findViewById(R.id.blogin);
         View d = findViewById(R.id.bpanel);
-        // LoginActivity.logged=4; //TYLKO DO EKSPERYMENTÓW
+        //LoginActivity.user_id=4; //TYLKO DO EKSPERYMENTÓW
         if (LoginActivity.user_id == 0) {
             a.setVisibility(View.VISIBLE);
             b.setVisibility(View.GONE);
@@ -77,7 +78,14 @@ public class MainActivity extends Activity {
                 error -> {
                 });
 
-
+        bpanel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context = getApplicationContext();
+                Intent intent = new Intent(context, usr_ctr_cnt.class);
+                startActivity(intent);
+            }
+        });
         binf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

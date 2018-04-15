@@ -93,7 +93,40 @@ Context context;
 
         Log.e(TAG, "tableId  " + tableId);
         Log.e(TAG, "date from HoursActivity class " + date);
+        DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
+                date,
+                tableId,
+                bookedTables -> {
+                    Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables);
+                    List<BookedTable> bookedTablesSortedByStartHour = new ArrayList<>(bookedTables);
+                    Collections.sort(bookedTablesSortedByStartHour, (o1, o2) -> o1.getStartHour() - o2.getStartHour());
+                    int currentHour = 11;
 
+                    for (BookedTable bookedTable : bookedTablesSortedByStartHour) {
+
+                        int startHour = bookedTable.getStartHour();
+                        int endHour = bookedTable.getEndHour();
+                        // hack
+                        if (startHour < 11) {
+                            startHour += 12;
+                            endHour += 12;
+                        }
+                        currentHour = startHour;
+                        for (int i = 0; i < allButtons.size(); i++) {
+                            allButtons.get(i).setEnabled(true);
+                        }
+                        for (int i = startHour; i < endHour; i++) {
+                            int indexOfButtonToBeDisabled = currentHour - 11;
+                            allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);//wygasniecie przycisku buttonu jesli godzina jest zarezerowwana w bazie danych
+                            allButtons.get(indexOfButtonToBeDisabled).setText("Zajęty");
+                            allButtons.get(indexOfButtonToBeDisabled).setBackgroundResource(R.drawable.button_shape_off);
+                            currentHour++;
+                        }
+
+                    }
+
+                },
+                error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
         //Log.e(TAG, "tableId from Registration class " + tableId);
         bHour1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -291,37 +324,8 @@ Context context;
                 }
             }
         }
-        DefaultBookedTablesRepository.getInstance().getBookedTablesAtDate( //wyswietlenie wszystkich zajetych godzin po wybraniu konkretnego stolu i daty
-                date,
-                tableId,
-                bookedTables -> {
-                    Log.i(TAG, " Booked tables at date " + date + ": " + bookedTables);
-                    List<BookedTable> bookedTablesSortedByStartHour = new ArrayList<>(bookedTables);
-                    Collections.sort(bookedTablesSortedByStartHour, (o1, o2) -> o1.getStartHour() - o2.getStartHour());
-                    int currentHour = 11;
 
-                    for (BookedTable bookedTable: bookedTablesSortedByStartHour) {
 
-                        int startHour = bookedTable.getStartHour();
-                        int endHour = bookedTable.getEndHour();
-                        // hack
-                        if (startHour < 11) {
-                            startHour += 12;
-                            endHour += 12;
-                        }
-                        currentHour = startHour;
-                        for (int i = startHour; i < endHour; i++) {
-                            int indexOfButtonToBeDisabled = currentHour - 11;
-                            allButtons.get(indexOfButtonToBeDisabled).setEnabled(false);//wygasniecie przycisku buttonu jesli godzina jest zarezerowwana w bazie danych
-                            allButtons.get(indexOfButtonToBeDisabled).setText("Zajęty");
-                            allButtons.get(indexOfButtonToBeDisabled).setBackgroundResource(R.drawable.button_shape_off);
-                            currentHour++;
-                        }
-
-                    }
-
-                },
-                error -> Log.e(TAG, " BSth went wrong " + error.getMessage()));
 
     }
 

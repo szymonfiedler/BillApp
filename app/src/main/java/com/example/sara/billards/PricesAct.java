@@ -8,14 +8,15 @@ import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import static com.android.volley.Response.*;
 
-public class PricesAct extends AppCompatActivity implements Response.Listener, Response.ErrorListener {
+
+public class PricesAct extends AppCompatActivity implements Listener, ErrorListener {
     public static final String TAG = "PricesActivity";
     TextView textView, tvinf;
     Button button;

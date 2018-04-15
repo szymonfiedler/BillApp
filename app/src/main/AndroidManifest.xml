@@ -40,12 +40,13 @@
         <activity android:name=".EndActivity" />
         <activity android:name=".Map" />
         <activity android:name=".After_registration" />
-
-
         <activity
             android:name=".PricesAct"
             android:label="@string/title_activity_prices"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".registration.Changepassword" />
+        <activity android:name=".User_Control_Center.usr_ctr_cnt" />
+        <activity android:name=".User_Control_Center.user_reservations" />
     </application>
 
 </manifest>
