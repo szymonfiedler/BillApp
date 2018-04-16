@@ -14,17 +14,15 @@ import com.example.sara.billards.MainActivity;
 import com.example.sara.billards.R;
 import com.example.sara.billards.registration.AsyncResponse;
 import com.example.sara.billards.registration.Changepassword;
-import com.example.sara.billards.registration.JSONfunction;
+
 import com.example.sara.billards.registration.LoginActivity;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
+
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -38,7 +36,7 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
     Context context;
     private static final String AUTH_TOKEN_URL = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/user_history/";
     private final String USER_AGENT = "Mozilla/5.0";
-    private static final String L_TAG = user_reservations.class.getSimpleName();
+    private static final String L_TAG = usr_ctr_cnt.class.getSimpleName();
     private ReservationTask mRes = null;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,14 +121,13 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
             InputStream is = null;
             // Only display the first 500 characters of the retrieved
             // web page content.
-            int len = 2500;
+
             String token = LoginActivity.Token;
             try {
                 URL url = new URL(AUTH_TOKEN_URL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 Log.d(L_TAG, "url.openConnection");
-                conn.setReadTimeout(10000);
-                conn.setConnectTimeout(15000);
+
                 conn.setRequestMethod("GET");
                 conn.setDoInput(true);
                 conn.setDoOutput(false);
@@ -153,8 +150,9 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
                 int serverResponseCode = conn.getResponseCode();
                 // do something with response
                 is = conn.getInputStream();
+
                 // Convert the InputStream into a string
-                String contentAsString = readIt(is, len);
+                String contentAsString = readIt(is);
 
                 // Makes sure that the InputStream is closed after the app is
                 // finished using it.
@@ -182,12 +180,14 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
         }
 
 
-        public String readIt(InputStream stream, int len) throws IOException {
+        public String readIt(InputStream stream) throws IOException {
             Reader reader = null;
             reader = new InputStreamReader(stream, "UTF-8");
-            char[] buffer = new char[len];
-            reader.read(buffer);
-            return new String(buffer);
+
+            char[] buffer = new char[100000];
+            int bytesRead = reader.read(buffer, 0, buffer.length);
+
+            return new String(buffer, 0, bytesRead);
         }
 
 

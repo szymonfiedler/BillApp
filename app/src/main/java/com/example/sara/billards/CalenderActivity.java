@@ -6,18 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import android.util.Log;
+
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 
-import com.example.sara.billards.booktable.BookedTable;
-import com.example.sara.billards.booktable.DefaultBookedTablesRepository;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
+
 
 public class CalenderActivity extends AppCompatActivity {
     CalendarView calendar;
