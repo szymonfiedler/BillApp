@@ -274,7 +274,6 @@ public class LoginActivity extends BaseActivity implements AsyncResponse {
             reader = new InputStreamReader(stream, "UTF-8");
             char[] buffer = new char[len];
             reader.read(buffer);
-            user_id = Character.getNumericValue(buffer[62] + buffer[63]);
             return new String(buffer);
         }
 

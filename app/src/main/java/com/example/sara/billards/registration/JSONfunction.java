@@ -61,6 +61,7 @@ public class JSONfunction {
         try {
             JSONObject temp = new JSONObject(response);
             String token = "Token " + temp.getString("token");
+            LoginActivity.user_id = temp.getInt("user_id");
             return token;
         } catch (JSONException ex) {
             ex.printStackTrace();
