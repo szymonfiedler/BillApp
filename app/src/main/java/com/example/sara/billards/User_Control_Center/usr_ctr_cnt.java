@@ -197,9 +197,8 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
 
             if (this.success) {
                 String respon = response;
-                if (respon.length() > 2) {
                     this.delegate.processFinish(respon);
-                }
+
 
             } else {
                 Log.d(L_TAG, response);
