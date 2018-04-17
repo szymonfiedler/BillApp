@@ -19,6 +19,7 @@ import com.example.sara.billards.registration.LoginActivity;
 
 import org.json.JSONException;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -89,6 +90,8 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
             Intent intent = new Intent(context, user_reservations.class);
             startActivity(intent);
         } catch (JSONException e) {
+            mRes = new ReservationTask(this);
+            mRes.execute((Void) null);
             e.printStackTrace();
         }
 
@@ -181,13 +184,14 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
 
 
         public String readIt(InputStream stream) throws IOException {
-            Reader reader = null;
-            reader = new InputStreamReader(stream, "UTF-8");
+            int len;
+            byte[] buffer = new byte[10000];
+            ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+            while ((len = stream.read(buffer)) != -1) {
+                byteArray.write(buffer, 0, len);
+            }
+            return new String(byteArray.toByteArray());
 
-            char[] buffer = new char[100000];
-            int bytesRead = reader.read(buffer, 0, buffer.length);
-
-            return new String(buffer, 0, bytesRead);
         }
 
 
@@ -196,8 +200,8 @@ public class usr_ctr_cnt extends Activity implements AsyncResponse {
             mRes = null;
 
             if (this.success) {
-                String respon = response;
-                    this.delegate.processFinish(respon);
+
+                this.delegate.processFinish(response);
 
 
             } else {
