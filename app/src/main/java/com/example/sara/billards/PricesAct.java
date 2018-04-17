@@ -21,7 +21,7 @@ import static com.android.volley.Response.Listener;
 
 public class PricesAct extends AppCompatActivity implements Listener, ErrorListener {
     public static final String TAG = "PricesActivity";
-    TextView textView, tvinf, textViewId_Club, textViewWeek, textViewWeek_aft, textViewWeekend;
+    TextView textView, textViewId_Club, textViewWeek, textViewWeek_aft, textViewWeekend;
     Button button;
     private RequestQueue mQueue;
 
@@ -39,7 +39,6 @@ public class PricesAct extends AppCompatActivity implements Listener, ErrorListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prices);
-        tvinf = (TextView) findViewById(R.id.tvinf);
         textViewId_Club = (TextView) findViewById(R.id.textViewId_Club);
         textViewWeek = (TextView) findViewById(R.id.textViewWeek);
         textViewWeek_aft = (TextView) findViewById(R.id.textViewWeek_aft);
@@ -85,6 +84,7 @@ public class PricesAct extends AppCompatActivity implements Listener, ErrorListe
     @Override
     public void onResponse(Object response) {
         latestRequestArray = ((JSONArray) response);
+        //textView.setText(" " + response);
         Log.e(TAG, "latestRequestArray's size: " + latestRequestArray.length());
 
 

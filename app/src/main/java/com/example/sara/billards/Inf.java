@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class Inf extends Activity {
-    TextView tvinf;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inf);
-        tvinf=(TextView) findViewById(R.id.tvinf);
+        textView=(TextView) findViewById(R.id.textView);
     }
 }
