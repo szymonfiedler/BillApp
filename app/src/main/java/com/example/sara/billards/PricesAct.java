@@ -2,6 +2,7 @@ package com.example.sara.billards;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,13 +13,15 @@ import com.android.volley.VolleyError;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import static com.android.volley.Response.*;
+import static com.android.volley.Response.ErrorListener;
+import static com.android.volley.Response.Listener;
 
 
 public class PricesAct extends AppCompatActivity implements Listener, ErrorListener {
     public static final String TAG = "PricesActivity";
-    TextView textView, tvinf;
+    TextView textView, tvinf, textViewId_Club, textViewWeek, textViewWeek_aft, textViewWeekend;
     Button button;
     private RequestQueue mQueue;
 
@@ -27,14 +30,20 @@ public class PricesAct extends AppCompatActivity implements Listener, ErrorListe
     }
 
     private JSONArray latestRequestArray;
-    int id_table, week, weekend, week_aft;
+    int id_club;
+    int week;
+    int weekend;
+    int week_aft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prices);
         tvinf = (TextView) findViewById(R.id.tvinf);
-        textView = (TextView) findViewById(R.id.textView);
+        textViewId_Club = (TextView) findViewById(R.id.textViewId_Club);
+        textViewWeek = (TextView) findViewById(R.id.textViewWeek);
+        textViewWeek_aft = (TextView) findViewById(R.id.textViewWeek_aft);
+        textViewWeekend = (TextView) findViewById(R.id.textViewWeekend);
         button = (Button) findViewById(R.id.button);
 
 
@@ -54,6 +63,8 @@ public class PricesAct extends AppCompatActivity implements Listener, ErrorListe
             @Override
             public void onClick(View v) {
                 mQueue.add(jsonRequest);
+
+
             }
         });
     }
@@ -74,27 +85,25 @@ public class PricesAct extends AppCompatActivity implements Listener, ErrorListe
     @Override
     public void onResponse(Object response) {
         latestRequestArray = ((JSONArray) response);
-        textView.setText(" " + response);
+        Log.e(TAG, "latestRequestArray's size: " + latestRequestArray.length());
+
+
         try {
-            int itemToDisplayId = latestRequestArray.length();
-            id_table = latestRequestArray.getJSONObject(itemToDisplayId).getInt("id_table");
-            week = latestRequestArray.getJSONObject(itemToDisplayId).getInt("week");
-            weekend = latestRequestArray.getJSONObject(itemToDisplayId).getInt("weekend");
-            week_aft = latestRequestArray.getJSONObject(itemToDisplayId).getInt("week_aft");
+            for (int i = 0; i < latestRequestArray.length(); i++) {
+                JSONObject jsonObject = latestRequestArray.getJSONObject(i);
 
-            textView.setText(toString() + "\n \n\n" + response + "\n");
-
+                int itemToDisplayId = latestRequestArray.length();
+                id_club = jsonObject.getInt("Id_club");
+                week = jsonObject.getInt("week");
+                weekend = jsonObject.getInt("weekend");
+                week_aft = jsonObject.getInt("week_aft");
+                textViewId_Club.setText(" " + id_club);
+                textViewWeek.setText(" " + week);
+                textViewWeekend.setText("" + weekend);
+                textViewWeek_aft.setText(" " + week_aft);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public String toString() {
-        return "Prices {" +
-                "id_table=" + id_table +
-                ", week=" + week +
-                ", weekend=" + weekend +
-                ", week_aft=" + week_aft +
-                '}';
     }
 }
