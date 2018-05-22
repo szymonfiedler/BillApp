@@ -1,105 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_sc"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true">
-
+    android:background="@drawable/first_activitys">
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff">
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
 
-        <!--  Header  Starts-->
-        <LinearLayout
-            android:id="@+id/header"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-
-            android:paddingTop="5dip"
-            android:paddingBottom="5dip"
-            android:orientation="horizontal">
-            <!-- Logo Start-->
-            <!--<ImageView-->
-            <!--android:id="@+id/imageView"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="10dip"-->
-            <!--android:src="@drawable/logo" />-->
-            <!-- Logo Ends -->
-        </LinearLayout>
-        <!--  Header Ends -->
-        <!-- Footer Start -->
-        <!--<LinearLayout android:id="@+id/footer"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="90dip"-->
-        <!--android:background="@layout/footer_repeat"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:orientation="vertical">-->
-        <!--</LinearLayout>-->
-        <!-- Footer Ends -->
-
-        <!-- Login Form -->
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="618dp"
-            android:layout_alignParentStart="true"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
+
+        <TextView
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:orientation="vertical"
-            android:padding="10dip">
-            <!--  Username Label -->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Nazwa użytkownika"
-                android:textColor="#372c24" />
+            android:layout_marginTop="12dp"
+            android:text="Zmień hasło"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
 
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dip"
-                android:layout_marginTop="5dip"
-                android:singleLine="true" />
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
 
-            <!--  PasswordOld Label -->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Stare hasło"
-                android:textColor="#372c24" />
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
 
-            <EditText
-                android:id="@+id/pass"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:password="true"
-                android:layout_marginBottom="20dip"
-                android:singleLine="true" />
-            <!--  PasswordNew Label -->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Nowe hasło"
-                android:textColor="#372c24" />
-
-            <EditText
-                android:id="@+id/passnew"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:password="true"
-                android:singleLine="true" />
-            <!-- Login button -->
-            <Button
-                android:id="@+id/btnchange"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="Zmień hasło" />
-
-
-        </LinearLayout>
-        <!-- Login Form Ends -->
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/pass" />
     </RelativeLayout>
-</ScrollView>
+
+
+    <View
+        android:id="@+id/rectangle"
+        android:layout_width="256dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rel"
+        android:layout_marginTop="270dp"
+        android:background="@drawable/rectangle" />
+
+    <View
+        android:id="@+id/profile"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignStart="@id/rectangle"
+        android:layout_marginStart="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="365dp"
+        android:background="@drawable/profile"
+        android:alpha="0.8" />
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:inputType="text"
+        android:textColorHint="@color/WHITE"
+        android:layout_alignStart="@id/rectangle"
+        android:layout_marginStart="38dp"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/WHITE"
+        android:layout_marginTop="348dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:hint="@string/nazwa"
+        android:textAppearance="@style/nazwa"
+        android:alpha="0.8" />
+
+    <View
+        android:id="@+id/rectangle2"
+        android:layout_width="256dp"
+        android:layout_height="44dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rectangle"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rectangle" />
+
+
+    <View
+        android:id="@+id/password2"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignStart="@id/rectangle2"
+        android:layout_marginStart="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="418dp"
+        android:background="@drawable/password_lock2"
+        android:alpha="0.8" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:textColor="@color/WHITE"
+        android:layout_width="189dp"
+        android:layout_height="44dp"
+        android:inputType="textPassword"
+        android:background="@android:color/transparent"
+        android:layout_alignStart="@id/rectangle"
+        android:layout_marginStart="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="402dp"
+        android:gravity="center_vertical"
+        android:textColorHint="@color/WHITE"
+        android:hint="Stare hasło"
+        android:alpha="0.8" />
+
+
+    <View
+        android:id="@+id/password3"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignStart="@id/rectangle2"
+        android:layout_marginStart="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="470dp"
+        android:background="@drawable/password_lock2"
+        android:alpha="0.8" />
+
+    <EditText
+        android:id="@+id/passnew"
+        android:textColor="@color/WHITE"
+        android:layout_width="189dp"
+        android:layout_height="44dp"
+        android:inputType="textPassword"
+        android:background="@android:color/transparent"
+        android:layout_alignStart="@id/rectangle"
+        android:layout_marginStart="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="454dp"
+        android:gravity="center_vertical"
+        android:textColorHint="@color/WHITE"
+        android:hint="Nowe hasło"
+        android:alpha="0.8" />
+
+    <View
+        android:id="@+id/rectangle3"
+        android:layout_width="256dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/rectangle2"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle" />
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btnchange"
+        android:layout_width="256dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/rectangle3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button"
+        app:spinning_bar_color="#688096"
+        android:text="Zmień hasło"
+        android:textColor="@color/WHITE"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="16sp" />
+
+</RelativeLayout>

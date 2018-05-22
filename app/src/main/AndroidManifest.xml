@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sara.billards">
+    package="com.example.billard.billards">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -8,17 +8,22 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- Google MAP API key -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,26 +32,57 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Registration"
-            android:label="@string/title_activity_registration"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Inf" />
+            android:name=".authorization.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".registration.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".registration.User_reg" />
-        <activity android:name=".HoursActivity" />
-        <activity android:name=".CalenderActivity" />
-        <activity android:name=".EndActivity" />
-        <activity android:name=".Map" />
-        <activity android:name=".After_registration" />
+            android:name=".authorization.UserRegistatrion"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".PricesAct"
+            android:name=".usercenter.EndActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".usercenter.Map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".usercenter.Prices"
             android:label="@string/title_activity_prices"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".registration.Changepassword" />
-        <activity android:name=".User_Control_Center.usr_ctr_cnt" />
-        <activity android:name=".User_Control_Center.user_reservations" />
+        <activity
+            android:name=".authorization.Change_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".usercenter.UserProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".usercenter.UserReservations"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".usercenter.Home"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".usercenter.Inf"
+            android:label="@string/title_activity_Inf"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".authorization.ForgottenPassword"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

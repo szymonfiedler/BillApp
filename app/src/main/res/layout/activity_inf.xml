@@ -1,114 +1,397 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sara.billards.Inf"
-    android:background="@drawable/backgroundsm">
-    <ImageView
-        android:id="@+id/iv_background"
-        android:layout_width="131dp"
-        android:layout_height="66dp"
-        android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
+    tools:context="com.example.billard.billards.usercenter.Inf"
+    android:background="@drawable/first_activitys">
+
 
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="378dp"
-        android:layout_height="500dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
 
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="start"
-            android:layout_marginTop="18dp"
-            android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:text="7 stołów do gry (SNOOKER/ POOL)"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
-
-
-        <TextView
-            android:id="@+id/textView2"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView"
-            android:layout_gravity="start"
-            android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:text="możliwość wyboru stołu"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView2"
-            android:layout_gravity="start"
-            android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="70dp"
-            android:text="rezerwacja online"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:text="O klubie"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
-            android:layout_gravity="start"
-            android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="20dp"
-            android:text="godziny otwarcia: 11:00 - 23:00"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="22sp" />
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
-            android:layout_gravity="start"
-            android:paddingBottom="20dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp"
-            android:shadowColor="#000"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="50"
-            android:text="rezerwuj i graj!"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="50sp"
-            android:textStyle="bold|italic" />
-
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/information" />
     </RelativeLayout>
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="79dp"
+        android:layout_alignParentTop="true">
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="381dp"
+                android:layout_height="340dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="42dp"
+                android:elevation="5dp"
+                android:background="@drawable/infa">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Szukasz miejsca na spotkanie \n z przyjaciółmi?"
+                    android:textSize="30sp"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:textColor="@color/WHITE"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="31dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="103dp"
+                    android:text="Zapraszamy do klubu \n Billard"
+                    android:textSize="25sp"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:textColor="@color/WHITE"
+                    android:gravity="center_horizontal" />
+
+                <ImageView
+                    android:id="@+id/club"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="246dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/club"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="166dp"
+                    android:gravity="center_horizontal"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:text="7"
+                    android:textColor="#7089A5"
+                    android:textSize="80sp" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="229dp"
+                    android:layout_marginTop="166dp"
+                    android:gravity="center_horizontal"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:text="3"
+                    android:textColor="#7089A5"
+                    android:textSize="80sp" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="59dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="215dp"
+                    android:text="stołów bilardowych"
+                    android:textColor="@color/WHITE"
+                    android:textSize="22sp"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="264dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="215dp"
+                    android:text="typy stołów"
+                    android:textColor="@color/WHITE"
+                    android:textSize="22sp"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/nie_czekaj_"
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="267dp"
+                    android:text="NIE CZEKAJ I ZAREZERWUJ \n STÓŁ BILARDOWY JUŻ TERAZ!"
+                    android:textColor="@color/WHITE"
+                    android:textSize="28sp"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="381dp"
+                android:layout_height="320dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="422dp"
+                android:elevation="5dp"
+                android:background="@drawable/infa">
+
+                <TextView
+                    android:id="@+id/zapraszamy_"
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Zapraszamy!"
+                    android:textSize="55sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <View
+                    android:id="@+id/clock"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/clock"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="105dp"
+                    android:text="Otwarte od 11:00 \n do ostatniego klienta. \n Możliwość rezerwacji do 23!"
+                    android:textSize="20sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <View
+                    android:id="@+id/lock"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="185dp"
+                    android:background="@drawable/location"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="220dp"
+                    android:text="Salony Bilardowe \n Ulicowa 80 \n 50-138 Wrocław \n NIP: 123-456-78-78"
+                    android:textSize="20sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="381dp"
+                android:layout_height="274dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="776dp"
+                android:elevation="5dp"
+                android:background="@drawable/infa">
+
+                <TextView
+                    android:id="@+id/znajdz"
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Znajdź nas na mapie"
+                    android:textSize="45sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="381dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="62dp"
+                    tools:context="com.example.billard.billards.usercenter.MapsActivity" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="381dp"
+                android:layout_height="340dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1080dp"
+                android:elevation="5dp"
+                android:background="@drawable/infa"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:id="@+id/kontakt"
+                    android:layout_width="381dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Kontakt"
+                    android:textSize="60sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <View
+                    android:id="@+id/mail"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/mail"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/text9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="115dp"
+                    android:text="szymon.fiedler@student.pwr.edu.pl"
+                    android:textSize="20sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+                <View
+                    android:id="@+id/phone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="155dp"
+                    android:background="@drawable/phone"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/text10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="190dp"
+                    android:text="Rezerwacje indywidualne \n  01 234 567 890 \n \n Rezerwacje grup zorganizowanych\n 01 234 567 890 \n01 234 567 890"
+                    android:textSize="20sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowColor="#B2000000"
+                    android:shadowDx="4"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

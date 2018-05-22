@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@color/colorPrimary" />
+    <item android:drawable="@drawable/splash_screen" />
 
     <item>
         <bitmap
+            android:transitionName="logo"
+            android:fitsSystemWindows="true"
             android:gravity="center"
-            android:src="@drawable/ic_launcher" />
+            android:id="@+id/action"
+            android:src="@drawable/logo" />
     </item>
 
 </layer-list>

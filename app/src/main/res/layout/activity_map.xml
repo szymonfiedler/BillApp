@@ -1,29 +1,421 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/first_activitys">
 
-    <ImageView
-        android:id="@+id/iv_background"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/map" />
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
 
-    <TextView
-        android:id="@+id/bmap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold|italic"
-        android:text="Mapa obiektu"
-        android:textSize="60sp"
-        android:textColor="#FFFFFF"
-        android:shadowColor="#000000"
-        android:shadowDx="3"
-        android:shadowDy="1"
-        android:shadowRadius="2" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
+
+        <TextView
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:text="Mapa obiektu"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
+
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/mapp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="79dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                tools:ignore="contentDescription"
+                android:layout_width="382dp"
+                android:layout_height="660dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/map"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="69dp"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="53dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="104dp" />
+
+            <RelativeLayout
+                android:id="@+id/v1_2"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="39dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_1"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 1"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num1"
+                    android:layout_width="100dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:lineSpacingExtra="5dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="69dp"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="172dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="98dp" />
+
+            <RelativeLayout
+                android:id="@+id/v2_2"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="152dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_2"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 2"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num2"
+                    android:layout_width="100dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:lineSpacingExtra="5dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/v3"
+                android:layout_width="69dp"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="292dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="100dp" />
+
+            <RelativeLayout
+                android:id="@+id/v3_2"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="272dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_3"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 3"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num3"
+                    android:layout_width="100dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:lineSpacingExtra="5dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/v4"
+                android:layout_height="68dp"
+                android:layout_width="123.35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="43dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="329dp" />
+
+            <RelativeLayout
+                android:id="@+id/v4_2"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="33dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="319dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_4"
+                    android:layout_width="139dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 4"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num4"
+                    android:layout_width="140dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/v5"
+                android:layout_height="68dp"
+                android:layout_width="123.35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="257dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="331dp" />
+
+            <RelativeLayout
+                android:id="@+id/v5_2"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="247dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="319dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_5"
+                    android:layout_width="140dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 5"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num5"
+                    android:layout_width="140dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="50dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/v6"
+                android:layout_width="69dp"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="435dp" />
+
+            <RelativeLayout
+                android:id="@+id/v6_2"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="105dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="430dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_6"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 6"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num6"
+                    android:layout_width="100dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:lineSpacingExtra="5dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/v7"
+                android:layout_width="69dp"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="230dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="435dp" />
+
+            <RelativeLayout
+                android:id="@+id/v7_2"
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="210dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="430dp"
+                android:background="@drawable/rezcom"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/st_7"
+                    android:layout_width="100dp"
+                    android:layout_height="43dp"
+                    android:text="Stół 7"
+                    android:textSize="33sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/typ_num7"
+                    android:layout_width="100dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    android:textSize="21sp"
+                    android:text="Typ - Pool \n  Liczba miejsc - 6"
+                    android:lineSpacingExtra="5dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@android:color/white"
+                    android:shadowRadius="4"
+                    android:shadowDy="4"
+                    android:shadowDx="0"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

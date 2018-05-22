@@ -1,8 +1,28 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="fab_margin">16dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="nav_header_vertical_spacing">20dp</dimen>
+    <dimen tools:override="true" name="design_navigation_icon_padding">8dp</dimen>
+    <dimen name="chart_width">382dp</dimen>
+    <dimen name="chart_height">183dp</dimen>
+    <dimen name="padding_left">15dp</dimen>
+    <dimen name="padding_top">20dp</dimen>
+    <dimen name="text1_top">7dp</dimen>
+    <dimen name="text1_left">24dp</dimen>
+    <dimen name="text2_top">73dp</dimen>
+    <dimen name="text2_left">29dp</dimen>
+    <dimen name="test3_top">107dp</dimen>
+    <dimen name="text1_width">247dp</dimen>
+    <dimen name="text1_height">61dp</dimen>
+    <dimen name="text3_width">247dp</dimen>
+    <dimen name="text3_height">70dp</dimen>
+    <dimen name="text2_width">247dp</dimen>
+    <dimen name="text2_height">34dp</dimen>
+    <dimen name="image_width">84dp</dimen>
+    <dimen name="image_height">157dp</dimen>
+    <dimen name="image_top">13dp</dimen>
+    <dimen name="image_left">283dp</dimen>
+    <dimen name="nav_header_height">210dp</dimen>
 </resources>

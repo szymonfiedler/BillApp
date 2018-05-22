@@ -1,9 +1,18 @@
 <resources>
-    <string name="app_name">Billard</string>
+    <string name="app_name">BillApp</string>
     <string name="title_activity_registration">Registration</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
+    <string name="email">Email</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="imie">Imię</string>
+    <string name="utwrzkont">Utwórz konto</string>
+    <string name="zapomniaem">Zapomniałem hasła</string>
+    <string name="nazwa">Nazwa użytkownika</string>
+    <string name="password"> Hasło </string>
+    <string name="password_confirm"> Potwierdź hasło </string>
+    <string name="zaloguj_sie">Zaloguj się</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -15,6 +24,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="do_16">Do 16</string>
+    <string name="po_16">Po 16</string>
     <string name="cennik">Cennik</string>
     <string name="zarezerwuj_st">Zarezerwuj stół</string>
     <string name="informacje_o_klubie">informacje o klubie</string>
@@ -28,4 +39,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_Inf">Inf</string>
 </resources>

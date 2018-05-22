@@ -4,223 +4,363 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sara.billards.PricesAct"
-    android:background="@drawable/backgroundsm">>
+    tools:context="com.example.billard.billards.usercenter.Prices"
+    android:background="@drawable/first_activitys">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="301dp"
-        android:layout_height="wrap_content"
-        android:text="GET PRICES"
-        android:background="@drawable/button_shapes"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="54dp" />
-    <Space
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
+
+        <TextView
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:text="Cennik"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
+
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/prices" />
+    </RelativeLayout>
 
     <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <RelativeLayout
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="60dp" />
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/box"
+                android:layout_width="371dp"
+                android:layout_height="145dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/box">
 
 
+                <TextView
+                    android:id="@+id/poniedzia_e"
+                    android:layout_width="371dp"
+                    android:layout_height="42dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Poniedziałek-Środa"
+                    android:textSize="30sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowDx="0"
+                    android:shadowColor="#80000000"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_below="@+id/textView"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="Club:"
-                android:paddingBottom="20dp"
-                android:textSize="30sp"
-                android:textColor="@android:color/white" />
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="41dp"
+                    android:background="@android:color/white" />
 
-            <TextView
-                android:id="@+id/textViewId_Club"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_below="@+id/textView"
-                android:layout_toEndOf="@+id/textView4"
-                android:paddingBottom="20dp"
-                android:gravity="center"
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="91dp"
+                    android:background="@android:color/white" />
 
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_below="@+id/textView"
-                android:layout_toEndOf="@+id/textViewId_Club"
-                android:paddingBottom="20dp"
-                android:gravity="center"
-                android:text="[id]"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <View
+                    android:id="@+id/line_2"
+                    android:layout_width="1dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="81dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="43dp"
+                    android:background="@android:color/white" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:textSize="30sp"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView4"
-                android:paddingEnd="10dp"
-                android:text="Week:"
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:id="@+id/do_16"
+                    android:layout_width="63dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:text="@string/do_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
-            <TextView
-                android:id="@+id/textViewWeek"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/po_16"
+                    android:layout_width="62dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:text="@string/po_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
-                android:layout_below="@+id/textView4"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView6"
-                android:gravity="center"
-                android:paddingBottom="30dp"
+                <TextView
+                    android:id="@+id/pnsrdo"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
 
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_below="@+id/textView4"
-                android:layout_toEndOf="@+id/textViewWeek"
-                android:paddingBottom="20dp"
-                android:gravity="center"
-                android:text=" zł"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/pnsrod"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:textSize="30sp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView8"
-                android:paddingEnd="10dp"
-                android:text="Week afternoon: "
+            <RelativeLayout
+                android:id="@+id/box2"
+                android:layout_width="371dp"
+                android:layout_height="145dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="188dp"
+                android:background="@drawable/box">
 
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:id="@+id/poniedzia_e2"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="371dp"
+                    android:layout_height="42dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Czwartek-Piątek"
+                    android:textSize="30sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowDx="0"
+                    android:shadowColor="#80000000"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
 
-            <TextView
-                android:id="@+id/textViewWeek_aft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="41dp"
+                    android:background="@android:color/white" />
 
-                android:gravity="center"
-                android:layout_below="@+id/textView8"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView10"
-                android:paddingBottom="20dp"
+                <View
+                    android:id="@+id/line4"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="91dp"
+                    android:background="@android:color/white" />
 
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <View
+                    android:id="@+id/line_23"
+                    android:layout_width="1dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="81dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="43dp"
+                    android:background="@android:color/white" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_below="@+id/textView8"
-                android:layout_toEndOf="@+id/textViewWeek_aft"
-                android:paddingBottom="20dp"
-                android:gravity="center"
-                android:text=" zł"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/do_16_2"
+                    android:layout_width="63dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:text="@string/do_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
+                <TextView
+                    android:id="@+id/po_16_2"
+                    android:layout_width="62dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:text="@string/po_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
+                <TextView
+                    android:id="@+id/czwptdo"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
 
+                <TextView
+                    android:id="@+id/czwptod"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:textSize="30sp"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView6"
-                android:paddingEnd="10dp"
-                android:text="Weekend: "
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
+            <RelativeLayout
+                android:id="@+id/box3"
+                android:layout_width="371dp"
+                android:layout_height="145dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="365dp"
+                android:background="@drawable/box">
 
-            <TextView
-                android:id="@+id/textViewWeekend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/poniedzia_e3"
+                    android:layout_width="371dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentTop="true"
+                    android:text="Sobota-Niedziela i święta"
+                    android:textSize="30sp"
+                    android:textColor="@color/WHITE"
+                    android:shadowDx="0"
+                    android:shadowColor="#80000000"
+                    android:shadowDy="4"
+                    android:shadowRadius="4"
+                    android:gravity="center_horizontal" />
 
-                android:layout_below="@+id/textView6"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView8"
-                android:paddingBottom="20dp"
-                android:gravity="center"
+                <View
+                    android:id="@+id/line5"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="41dp"
+                    android:background="@android:color/white" />
 
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <View
+                    android:id="@+id/line6"
+                    android:layout_width="371dp"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="91dp"
+                    android:background="@android:color/white" />
 
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_below="@+id/textView6"
-                android:layout_toEndOf="@+id/textViewWeekend"
-                android:paddingBottom="20dp"
-                android:gravity="center"
-                android:text=" zł"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                <View
+                    android:id="@+id/line_24"
+                    android:layout_width="1dp"
+                    android:layout_height="101dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="81dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="43dp"
+                    android:background="@android:color/white" />
 
+                <TextView
+                    android:id="@+id/do_16_3"
+                    android:layout_width="63dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:text="@string/do_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
+                <TextView
+                    android:id="@+id/po_16_3"
+                    android:layout_width="62dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:text="@string/po_16"
+                    android:textAppearance="@style/do_16"
+                    android:gravity="center_horizontal" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:paddingBottom="40dp"
-                android:paddingTop="10dp"
-                android:textStyle="bold|italic"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:shadowColor="#000000"
-                android:shadowDx="3"
-                android:shadowDy="1"
-                android:shadowRadius="2" />
+                <TextView
+                    android:id="@+id/sbnddo"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="54dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
 
-
+                <TextView
+                    android:id="@+id/sbndod"
+                    android:layout_width="158dp"
+                    android:layout_height="29dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="147dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="106dp"
+                    android:textAppearance="@style/z_godzine"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
-    </RelativeLayout>
+</RelativeLayout>

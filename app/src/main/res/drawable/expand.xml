@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/down" android:state_empty="true" android:top="10dp"></item>
+    <item android:drawable="@drawable/up" android:state_expanded="true" android:top="10dp"></item>
+    <item android:drawable="@drawable/down" android:top="10dp"></item>
+</selector>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/first_activitys">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
+
+        <TextView
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:text="Mój profil"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
+
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/profile" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rectangle"
+        android:layout_width="377dp"
+        android:layout_height="411dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/box"
+        android:elevation="5dp">
+
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="113dp"
+            android:layout_height="113dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/profile_big"
+            android:elevation="4dp" />
+
+        <TextView
+            android:id="@+id/uz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="140dp"
+            android:text="Użytkownik"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="78dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="22dp"
+            android:layout_alignParentTop="true"
+            android:text="Imię"
+            android:textSize="16sp"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@color/WHITE"
+            android:layout_marginTop="199dp"
+            android:background="@drawable/profil_but" />
+
+        <TextView
+            android:id="@+id/surname"
+            android:layout_width="78dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="22dp"
+            android:layout_alignParentTop="true"
+            android:text="Nazwisko"
+            android:textSize="16sp"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@color/WHITE"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/profil_but" />
+
+
+        <View
+            android:id="@+id/name1"
+            android:layout_width="209dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="125dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="199dp"
+            android:background="@drawable/ractangle_p" />
+
+        <View
+            android:id="@+id/profile_icon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="136dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="208dp"
+            android:background="@drawable/profile"
+            android:alpha="0.8" />
+
+        <EditText
+            android:id="@+id/uname"
+            android:layout_width="154.3dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="155.21dp"
+            android:textSize="16sp"
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="199dp"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:id="@+id/surname1"
+            android:layout_width="209dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="125dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/ractangle_p" />
+
+        <View
+            android:id="@+id/profile_icon2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="136dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="259dp"
+            android:background="@drawable/profile"
+            android:alpha="0.8" />
+
+        <EditText
+            android:id="@+id/usurname"
+            android:layout_width="154.3dp"
+            android:layout_height="28dp"
+            android:textSize="16sp"
+            android:textColorHint="@color/WHITE"
+            android:textColor="@color/WHITE"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="155.21dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:background="@android:color/transparent" />
+
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/bchange"
+            android:layout_width="246dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            app:spinning_bar_color="#688096"
+            android:textColor="@color/WHITE"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="314dp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:background="@drawable/button"
+            android:text="Zmień dane"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -4,191 +4,271 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sara.billards.EndActivity"
-    android:background="@drawable/backgroundsm">>
+    tools:context="com.example.billard.billards.usercenter.EndActivity"
+    android:background="@drawable/first_activitys">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="55dp"
+        android:background="#905c5c5c">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/line2" />
+
+        <TextView
+            android:id="@+id/moje_rezerw"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:text="Podsumowanie"
+            android:textSize="24sp"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/arrow"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/arrow" />
+
+        <View
+            android:id="@+id/pri"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/ball2" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="79dp"
         android:layout_alignParentTop="true">
 
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="381dp"
+            android:layout_height="409dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/box">
+
+            <View
+                android:id="@+id/profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/pr"
+                android:elevation="4dp" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
+                android:id="@+id/user"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:clickable="false"
-                android:paddingBottom="40dp"
-                android:paddingTop="10dp"
-                android:text="Podsumowanie rezerwacji"
-                android:textStyle="bold|italic"
-                android:gravity="center"
-                android:textSize="40sp"
-                android:textColor="#FFFFFF"
-                android:shadowColor="#000000"
-                android:shadowDx="3"
-                android:shadowDy="1"
-                android:shadowRadius="2" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="126dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Uzytkownik"
+                android:textColor="@color/WHITE"
+                android:textSize="31sp" />
 
+            <View
+                android:id="@+id/line"
+                android:layout_width="381dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="99dp"
+                android:background="@color/WHITE" />
+
+            <ImageView
+                android:id="@+id/table"
+                android:layout_width="53dp"
+                android:layout_height="98dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="125dp"
+                android:background="@drawable/snooker"
+                android:elevation="4dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/stol"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="118dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Stół 3"
+                android:textColor="@color/WHITE"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/typ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView3"
-                android:paddingEnd="10dp"
-                android:text="Użytkownik:"
-                android:paddingBottom="20dp"
-                android:textSize="30sp"
-                android:textColor="@android:color/white" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="166dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Typ stołu - snooker"
+                android:textColor="@color/WHITE"
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView3"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView4"
-                android:paddingBottom="20dp"
-                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="193dp"
 
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Liczba miejsc przy stole - 6"
+                android:textColor="@color/WHITE"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/changetable"
+                android:layout_width="92dp"
+                android:layout_height="31dp"
+
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="122dp"
+                android:layout_toRightOf="@id/stol"
+                android:background="@drawable/button"
+                android:elevation="4dp"
+                android:text="Zmień"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/calendar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="271dp"
+                android:background="@drawable/rez"
+                android:elevation="4dp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/termin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:textSize="30sp"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView4"
-                android:paddingEnd="10dp"
-                android:text="Stół:"
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="245dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Termin"
+                android:textColor="@color/WHITE"
+                android:textSize="36sp" />
+
+
+            <Button
+                android:id="@+id/changetermin"
+                android:layout_width="92dp"
+                android:layout_height="31dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="250dp"
+                android:layout_toRightOf="@id/termin"
+                android:background="@drawable/button"
+                android:elevation="4dp"
+                android:text="Zmień"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_below="@+id/textView4"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView6"
-                android:gravity="center"
-                android:paddingBottom="30dp"
-
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="293dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Godzina: 16:00 - 17:00"
+                android:textColor="@color/WHITE"
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:textSize="30sp"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView6"
-                android:paddingEnd="10dp"
-                android:text="Data: "
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="320dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:text="Data: 28.08.2018r."
+                android:textColor="@color/WHITE"
+                android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_below="@+id/textView6"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView8"
-                android:paddingBottom="20dp"
-                android:gravity="center"
-
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:textSize="30sp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:paddingStart="10dp"
-                android:layout_below="@+id/textView8"
-                android:paddingEnd="10dp"
-                android:text="Godzina: "
-
-                android:paddingBottom="20dp"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:gravity="center"
-                android:layout_below="@+id/textView8"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView10"
-                android:paddingBottom="20dp"
-
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_below="@+id/textView8"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView11"
-                android:paddingBottom="20dp"
-                android:text=" - "
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_below="@+id/textView8"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView12"
-                android:paddingBottom="20dp"
-
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+            <Button
+                android:id="@+id/reserve"
+                android:layout_width="246dp"
+                android:layout_height="41dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="366dp"
+                android:background="@drawable/button"
+                android:elevation="4dp"
+                android:text="Zarezerwuj"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/WHITE"
+                android:textSize="16sp" />
         </RelativeLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/buttonPUT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/scrollView"
-
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/button_shapes"
-        android:text="Rezerwuj"
-        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>
