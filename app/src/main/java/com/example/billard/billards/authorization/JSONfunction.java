@@ -47,6 +47,17 @@ public class JSONfunction extends AppCompatActivity {
         }
         return null;
     }
+    public static JSONObject Send(String username) {
+        try {
+            JSONObject temp = new JSONObject();
+            temp.put("username", username);
+            Log.d(DEBUG_TAG, "json login object created");
+            return temp;
+        } catch (JSONException ex) {
+            Log.e(ERROR_TAG, "Something went wrong with JSON Username Password creation");
+        }
+        return null;
+    }
 
     public static JSONObject getLoginObject(String username, String password) {
         try {
