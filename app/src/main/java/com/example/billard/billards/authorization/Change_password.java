@@ -151,7 +151,6 @@ public class Change_password extends Activity implements AsyncResponse {
     public void processFinish(String token) {
 
         String Pasnew = pasnew.getText().toString();
-        SaveSharedPreference.setUserToken(Change_password.this, token);
         mChangetask = new PasswordChangeTask(Pasnew, this);
         mChangetask.execute((Void) null);
 

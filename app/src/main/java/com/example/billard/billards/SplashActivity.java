@@ -17,7 +17,7 @@ import com.example.billard.billards.usercenter.Home;
 public class SplashActivity extends AppCompatActivity {
 
     Context context;
-
+    static public String tkn;
     private RequestQueue mQueue;
 
     @Override
@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             mQueue = CustomVolleyRequestQueue.getInstance(SplashActivity.this)
                     .getRequestQueue();
 
-
+            tkn = SaveSharedPreference.getUserToken(getApplicationContext());
             String url = "http://ec2-18-217-215-212.us-east-2.compute.amazonaws.com:8000/testsite/api4/";
             DefaultTablesRepository.createSingletonInstance(mQueue, url);
             DefaultTablesRepository.getInstance().getTables(

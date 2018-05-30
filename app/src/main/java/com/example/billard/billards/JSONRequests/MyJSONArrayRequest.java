@@ -8,6 +8,8 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.billard.billards.SplashActivity;
+
 import org.json.JSONArray;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +26,7 @@ public class MyJSONArrayRequest extends JsonArrayRequest {
     public Map<String, String> getHeaders() throws AuthFailureError {
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json; charset=utf-8");
+        headers.put("Authorization", SplashActivity.tkn);
         return headers;
     }
 

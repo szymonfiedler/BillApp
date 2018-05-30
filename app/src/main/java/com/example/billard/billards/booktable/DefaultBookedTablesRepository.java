@@ -5,7 +5,7 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.billard.billards.JSONRequests.JsonObjectRequest;
 import com.example.billard.billards.JSONRequests.MyJSONArrayRequest;
 
 import org.json.JSONArray;
