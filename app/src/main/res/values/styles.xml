@@ -12,6 +12,7 @@
         <item name="elevation">0dp</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:fitsSystemWindows">true</item>
         <item name="android:actionBarStyle">@style/ThemeActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -19,6 +20,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="actionBarStyle">@style/ThemeActionBar</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:navigationBarColor">#000000</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowContentTransitions">true</item>
@@ -158,7 +160,7 @@
     <style name="zapomniaem">
 
         <item name="android:textSize">
-            13sp
+            15sp
         </item>
 
         <item name="android:textColor">

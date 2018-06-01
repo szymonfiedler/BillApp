@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/register_sc"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/first_activitys">
+<RelativeLayout
+    android:id="@+id/register_sc"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <View
-        android:id="@+id/action"
-        android:layout_width="411dp"
-        android:layout_height="731dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/first_activitys" />
+
 
     <ImageView
         android:id="@+id/logo"
@@ -266,9 +265,11 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/btnRegister"
+        android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/zaloguj_sie"
         android:textAppearance="@style/zaloguj_sie"
         android:gravity="center_horizontal|bottom" />
 </RelativeLayout>
+</ScrollView>

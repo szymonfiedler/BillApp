@@ -5,8 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/BillApp.iml" filepath="$PROJECT_DIR$/.idea/BillApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/Billards2.iml" filepath="$PROJECT_DIR$/Billards2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" filepath="$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" />
       <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" filepath="$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" />
     </modules>
   </component>

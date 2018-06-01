@@ -181,7 +181,7 @@ public class LoginActivity extends Activity implements AsyncResponse {
         bLogin.doneLoadingAnimation(Color.parseColor("#7990A7"), BitmapFactory.decodeResource(getResources(), R.drawable.ic_done_white_48dp));
         SaveSharedPreference.setUserName(LoginActivity.this, Username);
         SaveSharedPreference.setUserToken(LoginActivity.this, token);
-
+        SplashActivity.tkn=token;
         showDialog(SaveSharedPreference.getUserToken(LoginActivity.this), "Logowanie", "Zalogowano pomyślnie");
 
     }

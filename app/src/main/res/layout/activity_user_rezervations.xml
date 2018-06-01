@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/first_activitys"
-    tools:context="com.example.billard.billards.HoursActivity">
+    android:background="@drawable/first_activitys">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="24dp"
         android:layout_height="55dp"
         android:background="#905c5c5c">
 
@@ -57,7 +55,7 @@
         android:id="@+id/lvExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="55dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
         android:groupIndicator="@drawable/expand"

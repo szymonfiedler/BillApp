@@ -232,6 +232,12 @@ public class Home extends AppCompatActivity
             context = getApplicationContext();
             SaveSharedPreference.clearUserInfo(context);
             Intent intent = new Intent(context, LoginActivity.class);
+            // Closing all the Activities
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            // Add new Flag to start new Activity
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            SaveSharedPreference.setUserToken(Home.this,"0");
+            SaveSharedPreference.setUserID(Home.this,0);
             progressBar.setVisibility(View.GONE);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
